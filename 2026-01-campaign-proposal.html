@@ -194,7 +194,6 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
-                            {/* Headline: Large Font Design Refined */}
                             <div className="mb-12">
                                 <h1 className="text-6xl md:text-[110px] font-black tracking-tighter leading-[0.9] mb-4 uppercase hero-gradient-text italic">
                                     MORE SALES.<br/>MORE QUICKLY.
@@ -224,7 +223,6 @@
                                     </div>
                                     
                                     <div className="lg:col-span-2 relative">
-                                        {/* 2x2 Grid Format for easier reading */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
                                                 { 
@@ -262,9 +260,9 @@
                                                     </div>
                                                     <span className="text-xl font-black mb-2 text-[#1c1763]">{item.label}</span>
                                                     <span className="text-[10px] text-[#2a63e4] font-black uppercase tracking-widest mb-3 leading-tight px-4">{item.sub}</span>
-                                                    <span className="text-xs text-slate-500 font-bold mb-4">{item.metric}</span>
+                                                    <span className="text-xs text-slate-500 font-bold mb-4 uppercase">{item.metric}</span>
                                                     <div className="mt-auto pt-4 border-t border-slate-200 w-full">
-                                                        <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase">Replaces {item.comp}</span>
+                                                        <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase leading-none">Replaces {item.comp}</span>
                                                     </div>
                                                 </div>
                                             ))}
@@ -279,13 +277,30 @@
                     <section className="py-24 max-w-6xl mx-auto px-6 fade-in text-[#1c1763]">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl font-black mb-4 uppercase italic">AICE: The AI Coach That Does it Better Than a Human</h2>
-                            <p className="text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Agents don't need to miss opportunities by "screwing up" with real life leads. They get real, challenging role-play scenarios and immediate feedback post-call.</p>
+                            <p className="text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
+                                Agents don't need to miss opportunities by "screwing up" with real life leads anymore. Let agents role-play with hundreds of challenging buyer and seller scenarios 24/7. AI Call Grading immediately sends them a report so they can make changes before they make their next dial!
+                            </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { val: "2X", label: "Set More Appointments", sub: "Agents double their appointment rates", icon: "trophy" },
-                                { val: "+36%", label: "Better Conversion", sub: "Increased conversion rates across teams", icon: "chart" },
-                                { val: "+$100M", label: "Extra Sales Volume", sub: "Directly attributed to MaverickRE", icon: "phone" }
+                                { 
+                                    val: "2X", 
+                                    label: "More Appointments Set", 
+                                    sub: "Agents typically double their appointment set rate after just 30 AI coaching calls", 
+                                    icon: "trophy" 
+                                },
+                                { 
+                                    val: "+36%", 
+                                    label: "Increased Conversion Rate", 
+                                    sub: "Lead-to-close conversion rate jumps 36% on average after implementing AI Sales Coach + core Maverick features", 
+                                    icon: "chart" 
+                                },
+                                { 
+                                    val: "24/7", 
+                                    label: "ROLE-PLAY ALL DAY", 
+                                    sub: "Agents use AI Sales Coach whenever (we've seen calls at 1 am)", 
+                                    icon: "phone" 
+                                }
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -302,9 +317,9 @@
                     {/* 4. PRICING EXPLORER */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none">Don't fall for the bait and switch.</h2>
-                            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
-                                With competitors, the more you use the tools, the more you pay. Maverick is a flat package built to help you grow.
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none text-[#1c1763]">Don't fall for the bait and switch.</h2>
+                            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+                                With competitors, the more you use the tools, the more you pay. Maverick is one flat price so you aren't penalized for your success.
                             </p>
                         </div>
 
@@ -346,20 +361,20 @@
                                                     <Icon name="check" className="w-6 h-6 text-[#2a63e4]" />
                                                     <div>
                                                         <span className="block font-black text-sm uppercase tracking-wider">{item.t}</span>
-                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter italic italic">{item.s}</span>
+                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter italic">{item.s}</span>
                                                     </div>
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="bg-[#1c1763] rounded-[4rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden">
+                                    <div className="bg-[#1c1763] rounded-[4rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden text-center lg:text-left">
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-[#2a63e4] rounded-full blur-[100px] opacity-20 -mr-32 -mt-32" />
                                         
-                                        <div className="space-y-12 relative z-10 text-center lg:text-left">
+                                        <div className="space-y-12 relative z-10">
                                             <div className="flex flex-col lg:flex-row justify-between items-center pb-8 border-b border-white/10 gap-4">
                                                 <div>
-                                                    <span className="text-blue-300 font-black uppercase text-[10px] tracking-[0.3em] block mb-2">Fragmented Stack</span>
+                                                    <span className="text-blue-300 font-black uppercase text-[10px] tracking-[0.3em] block mb-2 leading-none">Fragmented Stack</span>
                                                     <span className="text-4xl font-black text-blue-100/30 line-through tracking-tighter italic">{scenarios[activeScenario].competitor}</span>
                                                 </div>
                                                 <div className="p-3 bg-red-500/10 rounded-xl border border-red-500/20">
@@ -377,8 +392,8 @@
                                             <div className="pt-6">
                                                 <div className="flex flex-col items-center justify-center p-12 bg-[#2a63e4] rounded-[3.5rem] text-white shadow-2xl shadow-blue-500/40 text-center transform hover:scale-[1.02] transition-all cursor-default">
                                                     <span className="text-[10px] uppercase font-black tracking-[0.6em] mb-4 text-blue-100 uppercase">Q1 2026 SAVINGS</span>
-                                                    <span className="text-6xl md:text-7xl font-black tracking-tighter leading-none">{scenarios[activeScenario].savings} <span className="text-3xl tracking-tight">SAVED</span></span>
-                                                    <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic">Precision. Accountability. Real-Time Data.</span>
+                                                    <span className="text-6xl md:text-7xl font-black tracking-tighter leading-none">{scenarios[activeScenario].savings} <span className="text-3xl tracking-tight uppercase">SAVED</span></span>
+                                                    <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic italic">Precision. Accountability. Real-Time Data.</span>
                                                 </div>
                                                 <p className="mt-10 text-center text-[12px] text-blue-200/60 font-black uppercase tracking-[0.2em] leading-loose max-w-xs mx-auto">
                                                     {scenarios[activeScenario].note}
@@ -392,16 +407,16 @@
                     </section>
 
                     {/* 5. ROADMAP */}
-                    <section className="bg-slate-100 py-32 border-y border-slate-200/50 fade-in">
+                    <section className="bg-slate-100 py-32 border-y border-slate-200/50 fade-in text-[#1c1763]">
                         <div className="max-w-6xl mx-auto px-6">
                             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
                                 <div className="max-w-xl">
-                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none text-[#1c1763]">The Road to 2026.</h2>
-                                    <p className="text-slate-600 font-bold leading-relaxed text-[#1c1763]">Maverick is the game-changer you've been looking for. Stop guessing–get instant insights based on real-time CRM data, watch your agents set twice as many appointments with AI Sales Coach, route leads intelligently with Pro-Dispatch, reassign leads when they aren't being worked, and watch your conversions skyrocket.</p>
+                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none">The Road to 2026.</h2>
+                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is the game-changer you've been looking for. Stop guessing–get instant insights based on real-time CRM data, watch your agents set twice as many appointments with AI Sales Coach, route leads intelligently with Pro-Dispatch, reassign leads when they aren't being worked, and watch your conversions skyrocket.</p>
                                 </div>
                                 <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
                                     <Icon name="calendar" className="w-5 h-5 text-[#2a63e4]" />
-                                    <span className="text-sm font-black uppercase tracking-widest text-[#1c1763]">Q1 Release Calendar</span>
+                                    <span className="text-sm font-black uppercase tracking-widest">Q1 Release Calendar</span>
                                 </div>
                             </div>
 
@@ -410,23 +425,23 @@
                                 
                                 <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-900 text-white rounded-full text-[10px] font-black tracking-widest uppercase">JANUARY 2026</div>
-                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">Rules & Alerts</h4>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Rules & Alerts</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Automated notifications and lead reassignment for Pro and Accelerator tiers.</p>
                                     <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">LIVE IN BETA</div>
                                 </div>
 
                                 <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-[#2a63e4] text-white rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
-                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">Auto-Reassignment</h4>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Auto-Reassignment</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
                                     <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
                                 </div>
 
                                 <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">Q1 2026</div>
-                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">Recruiting Module</h4>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Recruiting Module</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Prototype in testing for enterprise teams and recruitment-focused growth engines.</p>
-                                    <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block">PROTOTYPING</div>
+                                    <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase">PROTOTYPING</div>
                                 </div>
                             </div>
                         </div>
@@ -444,11 +459,8 @@
                             <h3 className="text-4xl md:text-6xl font-black leading-[1.1] mb-12 tracking-tight uppercase">
                                 Automatically Watching <br/>
                                 Your Database 24/7. <br/>
-                                <span className="text-blue-400 italic tracking-tighter leading-none">This is Maverick.</span>
+                                <span className="text-blue-400 italic tracking-tighter leading-none italic">This is Maverick.</span>
                             </h3>
-                            <p className="text-blue-200/60 font-black uppercase tracking-[0.5em] text-[10px]">
-                                MAVERICK Q1 STRATEGIC POSITIONING
-                            </p>
                         </div>
                     </section>
 
