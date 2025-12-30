@@ -45,118 +45,124 @@ const App = () => {
   return (
     <div id="maverick-campaign-root" className="min-h-screen bg-slate-50 text-[#1c1763] pb-20">
       {/* 1. HERO SECTION */}
-      <header className="relative bg-gradient-to-br from-[#1c1763] via-[#2a63e4] to-[#354095] text-white py-20 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
+      <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#223165] to-[#354095] text-white pt-24 pb-48 px-6 overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#2a63e4] rounded-full blur-[120px]" />
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-400 rounded-full blur-[100px]" />
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10 text-center">
           <img 
             src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
             alt="Maverick Logo" 
-            className="h-12 mx-auto mb-12"
+            className="h-10 md:h-12 mx-auto mb-10"
           />
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 text-sm font-medium mb-6">
-            <Zap className="w-4 h-4 mr-2" />
-            <span>Q1 2024 POSITIONING</span>
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 text-sm font-medium mb-8">
+            <Zap className="w-4 h-4 mr-2 text-blue-300" />
+            <span className="tracking-wide uppercase text-[10px] font-bold">Q1 Strategic Campaign</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            Maverick is about to be <span className="text-blue-300">automatic.</span>
+          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1]">
+            Maverick is about to be <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">automatic.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-blue-100/80 max-w-3xl mx-auto font-light leading-relaxed">
             Stop duct-taping your business together. One platform to automate visibility, 
-            coaching, and accountability—for 50% less.
+            coaching, and accountability—for <span className="text-white font-bold italic">40-50% less</span> than your current stack.
           </p>
         </div>
       </header>
 
-      {/* 2. THE CONSOLIDATION STORY */}
-      <section className="max-w-6xl mx-auto px-6 -mt-12">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Fragmented Stack */}
-          <div className="bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-red-50 rounded-2xl">
-                <AlertCircle className="w-6 h-6 text-red-500" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">The "Duct-Tape" Stack</h3>
-                <p className="text-sm text-slate-500">Manual, expensive, and fragile</p>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              {[
-                "Stand-alone Dialers & VOIP",
-                "Fragmented Analytics Tools",
-                "Manual Coaching Spreadsheets",
-                "Disconnected Accountability Trackers",
-                "High Admin Maintenance Hours"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center p-4 bg-slate-50 rounded-xl border border-dashed border-slate-300 grayscale opacity-70">
-                  <div className="w-2 h-2 rounded-full bg-slate-400 mr-4" />
-                  <span className="text-slate-600 font-medium">{item}</span>
+      {/* 2. THE CONSOLIDATION STORY - Adjusted Z-index and Margin */}
+      <section className="relative z-30 max-w-6xl mx-auto px-6 -mt-32">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          
+          {/* Fragmented Stack (The "Before") */}
+          <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/50 p-8 md:p-10 border border-slate-100 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center space-x-4 mb-8">
+                <div className="p-4 bg-red-50 rounded-2xl">
+                  <AlertCircle className="w-8 h-8 text-red-500" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-2xl font-extrabold text-[#1c1763]">The "Duct-Tape" Stack</h3>
+                  <p className="text-sm text-slate-500 font-medium">Manual, expensive, and fragile</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-10">
+                {[
+                  "Stand-alone Dialers & VOIP",
+                  "Fragmented Analytics Tools",
+                  "Manual Coaching Spreadsheets",
+                  "Disconnected Accountability Trackers",
+                  "High Admin Maintenance Hours"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center p-4 bg-slate-50 rounded-2xl border border-dashed border-slate-200 grayscale opacity-70">
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300 mr-4 flex-shrink-0" />
+                    <span className="text-slate-600 font-semibold text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="mt-8 pt-6 border-t border-slate-100">
+            <div className="pt-8 border-t border-slate-100">
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-sm text-slate-400 uppercase tracking-wider font-bold">Total Estimated Cost</p>
-                  <p className="text-3xl font-bold text-slate-400">$1,800+/mo</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-black mb-1">Estimated Total Cost</p>
+                  <p className="text-4xl font-black text-slate-400">$1,800<span className="text-xl font-medium tracking-normal">+/mo</span></p>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded font-bold">INEFFICIENT</span>
+                  <span className="text-[10px] bg-red-100 text-red-600 px-3 py-1 rounded-full font-black tracking-widest">INEFFICIENT</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Maverick Integration */}
-          <div className="bg-[#1c1763] rounded-3xl shadow-2xl p-8 border border-white/10 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4">
+          {/* Maverick Integration (The "After") */}
+          <div className="bg-[#1c1763] rounded-[2.5rem] shadow-2xl shadow-[#1c1763]/30 p-8 md:p-10 border border-white/10 text-white relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute -top-10 -right-10 opacity-10">
               <img 
                 src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Icon%20-%20White%20and%20Blue.png" 
                 alt="Icon" 
-                className="w-12 h-12 opacity-20"
+                className="w-48 h-48"
               />
             </div>
             
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-blue-500 rounded-2xl">
-                <CheckCircle2 className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">The Maverick System</h3>
-                <p className="text-sm text-blue-300">Automated, integrated, and simple</p>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              {[
-                "Integrated Dialer & Communications",
-                "Real-time Visibility & Analytics",
-                "Automated Accountability Loops",
-                "Digital Coaching Workflows",
-                "Zero-maintenance Infrastructure"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="w-2 h-2 rounded-full bg-blue-400 mr-4 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-                  <span className="text-blue-50 font-medium">{item}</span>
+            <div className="relative z-10">
+              <div className="flex items-center space-x-4 mb-8">
+                <div className="p-4 bg-blue-600 rounded-2xl shadow-lg shadow-blue-600/20">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-2xl font-extrabold text-white">The Maverick System</h3>
+                  <p className="text-sm text-blue-300 font-medium">Automated, integrated, and simple</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-10">
+                {[
+                  "Integrated Dialer & Communications",
+                  "Real-time Visibility & Analytics",
+                  "Automated Accountability Loops",
+                  "Digital Coaching Workflows",
+                  "Zero-maintenance Infrastructure"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all cursor-default">
+                    <div className="w-2.5 h-2.5 rounded-full bg-blue-400 mr-4 shadow-[0_0_10px_rgba(96,165,250,0.8)] flex-shrink-0" />
+                    <span className="text-blue-50 font-semibold text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="pt-8 border-t border-white/10 relative z-10">
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-sm text-blue-300 uppercase tracking-wider font-bold">Integrated Cost</p>
-                  <p className="text-3xl font-bold text-white">$950/mo*</p>
+                  <p className="text-[10px] text-blue-400 uppercase tracking-[0.2em] font-black mb-1">Consolidated Cost</p>
+                  <p className="text-4xl font-black text-white">$950<span className="text-xl font-medium tracking-normal text-blue-300">/mo*</span></p>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs bg-green-500 text-white px-2 py-1 rounded font-bold uppercase tracking-widest animate-pulse">40-50% Savings</span>
+                  <span className="text-[10px] bg-blue-600 text-white px-3 py-1 rounded-full font-black tracking-widest animate-pulse">40-50% SAVINGS</span>
                 </div>
               </div>
             </div>
@@ -165,25 +171,25 @@ const App = () => {
       </section>
 
       {/* 3. VALUE ANGLE & PRICING SCENARIOS */}
-      <section className="py-24 max-w-6xl mx-auto px-6">
+      <section className="py-24 max-w-6xl mx-auto px-6 mt-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold mb-4">Don't Get Taxed for Using Your Tools</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Don't Get Taxed for Using Your Tools</h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Competitors use metered minutes and usage-based pricing that punishes growth. 
-            Maverick's flat structure ensures your costs don't balloon as your team wins.
+            Maverick's <span className="text-[#1c1763] font-bold">Flat Package</span> ensures your costs don't balloon as your team wins.
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="flex border-b border-slate-200 overflow-x-auto">
+        <div className="bg-white rounded-[2rem] shadow-xl border border-slate-100 overflow-hidden">
+          <div className="flex border-b border-slate-100 bg-slate-50/50 overflow-x-auto">
             {Object.keys(scenarios).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveScenario(key)}
-                className={`flex-1 py-6 px-4 font-bold text-sm transition-all outline-none whitespace-nowrap ${
+                className={`flex-1 py-7 px-6 font-bold text-xs uppercase tracking-widest transition-all outline-none whitespace-nowrap ${
                   activeScenario === key 
-                  ? 'text-[#2a63e4] border-b-4 border-[#2a63e4] bg-blue-50/50' 
-                  : 'text-slate-400 hover:text-slate-600'
+                  ? 'text-[#2a63e4] border-b-4 border-[#2a63e4] bg-white' 
+                  : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
                 }`}
               >
                 {scenarios[key].label}
@@ -191,39 +197,44 @@ const App = () => {
             ))}
           </div>
 
-          <div className="p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="inline-block p-4 rounded-2xl bg-blue-50 text-[#2a63e4]">
+          <div className="p-8 md:p-16">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="inline-block p-5 rounded-3xl bg-blue-50 text-[#2a63e4] shadow-inner">
                   <TrendingDown className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-bold">Why Maverick Wins on Value</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  "If you have free-flowing cash flow and want to over-customize with multiple vendors, that's your choice. 
-                  But if you want one tool that does more for less, Maverick is the smart option."
-                </p>
-                <div className="flex items-center space-x-2 text-sm font-bold text-slate-500">
-                  <Layers className="w-4 h-4" />
-                  <span>REPLACES 4+ COMPETITOR SUBSCRIPTIONS</span>
+                <div>
+                  <h3 className="text-3xl font-black mb-4">Why Maverick Wins</h3>
+                  <p className="text-slate-600 leading-relaxed text-lg italic">
+                    "If you have free-flowing cash flow and want to over-customize with multiple vendors, that's your choice. 
+                    But if you want one tool that does more for less, Maverick is the smart option."
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-[#1c1763] rounded-2xl text-white inline-flex">
+                  <Layers className="w-5 h-5 text-blue-400" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Replaces 4+ Subscriptions</span>
                 </div>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-                <div className="space-y-6">
-                  <div className="flex justify-between items-center pb-4 border-b border-slate-200">
-                    <span className="text-slate-500 font-medium">Competitor "Usage Tax" Model</span>
-                    <span className="text-xl font-bold text-slate-400 line-through">{scenarios[activeScenario].competitor}</span>
+              <div className="bg-slate-50 rounded-[2rem] p-10 border border-slate-200/50 shadow-inner relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                   <TrendingUp className="w-32 h-32" />
+                </div>
+                <div className="space-y-8 relative z-10">
+                  <div className="flex justify-between items-center pb-6 border-b border-slate-200">
+                    <span className="text-slate-500 font-bold uppercase text-xs tracking-widest">Competitor "Usage Tax"</span>
+                    <span className="text-2xl font-black text-slate-300 line-through">{scenarios[activeScenario].competitor}</span>
                   </div>
-                  <div className="flex justify-between items-center pb-4 border-b border-slate-200">
-                    <span className="text-[#1c1763] font-bold">Maverick Flat Package</span>
-                    <span className="text-3xl font-extrabold text-[#2a63e4]">{scenarios[activeScenario].maverick}</span>
+                  <div className="flex justify-between items-center pb-6">
+                    <span className="text-[#1c1763] font-black uppercase text-xs tracking-widest">Maverick Flat Fee</span>
+                    <span className="text-5xl font-black text-[#2a63e4] tracking-tight">{scenarios[activeScenario].maverick}</span>
                   </div>
                   <div className="pt-2">
-                    <div className="flex items-center justify-between p-4 bg-[#2a63e4] rounded-xl text-white">
-                      <span className="font-bold">Estimated Savings</span>
-                      <span className="text-2xl font-black">{scenarios[activeScenario].savings} SAVED</span>
+                    <div className="flex flex-col items-center justify-center p-6 bg-[#1c1763] rounded-3xl text-white shadow-xl shadow-[#1c1763]/20 text-center">
+                      <span className="text-[10px] uppercase font-black tracking-[0.3em] mb-2 opacity-60">Guaranteed Efficiency</span>
+                      <span className="text-4xl font-black tracking-tight">{scenarios[activeScenario].savings} SAVED</span>
                     </div>
-                    <p className="mt-4 text-xs text-slate-400 italic">
+                    <p className="mt-6 text-center text-xs text-slate-400 font-medium">
                       {scenarios[activeScenario].note}
                     </p>
                   </div>
@@ -235,39 +246,39 @@ const App = () => {
       </section>
 
       {/* 4. THE 3 CORE PILLARS */}
-      <section className="bg-slate-100 py-24">
+      <section className="bg-white py-24 border-y border-slate-200/50 shadow-inner">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
-                <Zap className="w-6 h-6" />
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="group p-8 rounded-[2rem] bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 border border-transparent hover:border-slate-100">
+              <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-8 text-[#2a63e4] group-hover:scale-110 transition-transform duration-500">
+                <Zap className="w-7 h-7" />
               </div>
-              <h4 className="text-xl font-bold mb-3">Automated Visibility</h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <h4 className="text-2xl font-black mb-4 tracking-tight text-[#1c1763]">Automated Visibility</h4>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium">
                 Once your rules are set, Maverick runs. Get instant insight into lead leakage 
-                and conversion gaps without chasing spreadsheets.
+                and conversion gaps without chasing spreadsheets or manual reports.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
-                <BarChart3 className="w-6 h-6" />
+            <div className="group p-8 rounded-[2rem] bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 border border-transparent hover:border-slate-100">
+              <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-8 text-[#2a63e4] group-hover:scale-110 transition-transform duration-500">
+                <BarChart3 className="w-7 h-7" />
               </div>
-              <h4 className="text-xl font-bold mb-3">Coaching at Scale</h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Don't just track data—improve it. Use integrated workflows to provide 
-                consistent, high-impact coaching that turns B-players into A-players.
+              <h4 className="text-2xl font-black mb-4 tracking-tight text-[#1c1763]">Coaching at Scale</h4>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                Don't just track data—improve it. Integrated workflows turn raw metrics into 
+                actionable coaching moments that transform your agents into top producers.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
-                <ShieldCheck className="w-6 h-6" />
+            <div className="group p-8 rounded-[2rem] bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 border border-transparent hover:border-slate-100">
+              <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-8 text-[#2a63e4] group-hover:scale-110 transition-transform duration-500">
+                <ShieldCheck className="w-7 h-7" />
               </div>
-              <h4 className="text-xl font-bold mb-3">True Accountability</h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Remove the "guesswork" from management. Maverick bridges the gap between 
-                knowing what's wrong and ensuring it gets fixed.
+              <h4 className="text-2xl font-black mb-4 tracking-tight text-[#1c1763]">True Accountability</h4>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                Remove the "management guesswork." Maverick bridges the gap between identification 
+                and resolution, ensuring standards are met automatically.
               </p>
             </div>
           </div>
@@ -275,48 +286,52 @@ const App = () => {
       </section>
 
       {/* 5. PARTNER STRATEGY CALLOUT */}
-      <section className="py-24 max-w-4xl mx-auto px-6 text-center">
-        <div className="bg-white p-12 rounded-[3rem] shadow-xl border-t-8 border-[#2a63e4]">
-          <h3 className="text-3xl font-extrabold mb-6">Innovative Partner Program</h3>
-          <p className="text-lg text-slate-600 mb-8">
-            We're partnering with the top innovators in the industry to build a new standard 
-            for real estate operations. Not just a payout system, but a growth engine.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-500" />
-              <span className="font-bold text-sm">Joint Webinars</span>
-            </div>
-            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-500" />
-              <span className="font-bold text-sm">Repurposed Content Clips</span>
-            </div>
-            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-500" />
-              <span className="font-bold text-sm">Innovative Testimonials</span>
+      <section className="py-24 max-w-5xl mx-auto px-6">
+        <div className="bg-gradient-to-br from-[#1c1763] to-[#223165] p-1 md:p-1.5 rounded-[3rem] shadow-2xl">
+          <div className="bg-white p-10 md:p-16 rounded-[2.8rem] text-center">
+            <h3 className="text-4xl font-black mb-6 tracking-tight text-[#1c1763]">Innovative Partner Program</h3>
+            <p className="text-xl text-slate-500 mb-12 max-w-3xl mx-auto font-light">
+              We're partnering with industry leaders to build a new standard. 
+              Not just a payout system—a content engine for innovators.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { label: "Joint Webinars", icon: Users },
+                { label: "Studio Filming", icon: Monitor },
+                { label: "Plug & Play Assets", icon: CheckCircle2 }
+              ].map((pill, idx) => (
+                <div key={idx} className="px-8 py-4 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-3 group hover:border-[#2a63e4] transition-all duration-300 cursor-default">
+                  <pill.icon className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                  <span className="font-bold text-sm tracking-wide text-[#1c1763]">{pill.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* 6. FOOTER / CTA */}
-      <footer className="bg-[#1c1763] text-white py-16 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10">
-          <div className="mb-8 md:mb-0">
+      <footer className="bg-[#1c1763] text-white py-20 px-6 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-20" />
+        <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="text-center md:text-left">
             <img 
               src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
               alt="Maverick Logo" 
-              className="h-8 mb-4 opacity-80"
+              className="h-8 mb-6 opacity-90 mx-auto md:mx-0"
             />
-            <p className="text-blue-300 text-sm">© 2024 Maverick Real Estate Solutions. All rights reserved.</p>
+            <p className="text-blue-200/60 text-xs font-bold uppercase tracking-widest leading-loose">
+              Automating Human Potential.<br />
+              © 2024 Maverick Real Estate Solutions.
+            </p>
           </div>
           
           <div className="text-center md:text-right">
-            <h5 className="text-lg font-bold mb-2">Ready to Automate?</h5>
-            <p className="text-blue-200 mb-6 text-sm">Schedule a deep-dive comparison and see your custom savings scenario.</p>
-            <button className="px-8 py-4 bg-[#2a63e4] hover:bg-[#354095] text-white font-bold rounded-2xl transition-all flex items-center mx-auto md:ml-auto">
+            <h5 className="text-3xl font-black mb-3 tracking-tight">Ready to Automate?</h5>
+            <p className="text-blue-200/80 mb-8 text-sm max-w-sm ml-auto font-medium">Get a custom deep-dive comparison and see exactly how much you're overpaying for your current stack.</p>
+            <button className="group px-10 py-5 bg-[#2a63e4] hover:bg-white hover:text-[#1c1763] text-white font-black rounded-2xl transition-all duration-300 flex items-center mx-auto md:ml-auto shadow-xl shadow-blue-900/40">
               Get Your Scenario Breakdown
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
