@@ -1,361 +1,423 @@
-import React, { useState } from 'react';
-import { 
-  Zap, 
-  Layers, 
-  TrendingDown, 
-  ShieldCheck, 
-  Users, 
-  Monitor, 
-  Smartphone, 
-  CheckCircle2, 
-  AlertCircle,
-  ArrowRight,
-  TrendingUp,
-  BarChart3,
-  PhoneCall,
-  Target,
-  Trophy,
-  Cpu,
-  MousePointer2,
-  PieChart,
-  Calendar,
-  Clock,
-  Activity
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maverick conversionOS | Q1 Strategic Campaign</title>
+    
+    <!-- 1. Load Fonts and Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. React & Babel CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-const App = () => {
-  const [activeScenario, setActiveScenario] = useState('mid');
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif !important;
+            scroll-behavior: smooth;
+        }
+        .text-gradient {
+            background: linear-gradient(to r, #93c5fd, #dbeafe, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #root {
+            min-height: 100vh;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 
-  const scenarios = {
-    small: {
-      label: "Small Team (< 10 Agents)",
-      competitor: "$1,350+",
-      maverick: "$375",
-      savings: "72%",
-      note: "Based on Rev_Acc tier. Replaces niche AI coaching + manual accountability trackers."
-    },
-    mid: {
-      label: "Mid-Size (10-49 Agents)",
-      competitor: "$2,949+",
-      maverick: "$930",
-      savings: "68%",
-      note: "70% of Maverick teams fall here. Shilo's AI alone is $1,799 (93% more) with zero CRM reporting or nudging."
-    },
-    enterprise: {
-      label: "Enterprise (200+ Agents)",
-      competitor: "$7,300+",
-      maverick: "$2,200",
-      savings: "70%",
-      note: "Competitor 'minute taxes' and seat fees create a 3.3x overhead compared to Maverick's flat enterprise structure."
-    }
-  };
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maverick: {
+                            blue: '#2a63e4',
+                            navy: '#1c1763',
+                            deep: '#223165',
+                            slate: '#546681',
+                            accent: '#354095'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50">
+    <div id="root"></div>
 
-  return (
-    <div id="maverick-campaign-root" className="min-h-screen bg-slate-50 text-[#1c1763] pb-20 selection:bg-blue-100">
-      {/* 1. HERO SECTION */}
-      <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#1c1763] to-[#2a63e4] text-white pt-24 pb-64 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-          <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-[#2a63e4] rounded-full blur-[160px] animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[120px]" />
-        </div>
-        
-        <div className="max-w-6xl mx-auto relative z-10 text-center">
-          <img 
-            src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
-            alt="Maverick Logo" 
-            className="h-10 md:h-12 mx-auto mb-10 drop-shadow-lg"
-          />
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-blue-100 text-[10px] font-black tracking-[0.2em] mb-8">
-            <Cpu className="w-3.5 h-3.5 mr-2 text-blue-300 fill-blue-300" />
-            <span>2024 INMAN INNOVATOR FINALIST • conversionOS</span>
-          </div>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-white">
-            Maverick is about to be <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-100 to-white italic uppercase">automatic.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
-            The intelligent command center for teams of 5-50 agents. <br/>
-            Stop paying <span className="text-white font-bold">93% more</span> for niche tools that leave gaps in your business.
-          </p>
-        </div>
-      </header>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
 
-      {/* 2. THE M.A.V. PILLARS (CENTRAL BRAIN) */}
-      <section className="relative z-30 max-w-6xl mx-auto px-6 -mt-44">
-        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 p-1 md:p-1.5 border border-slate-100">
-          <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
-              <div className="lg:border-r border-slate-100 lg:pr-12">
-                <h3 className="text-3xl font-black tracking-tight mb-4">The M.A.V. <br/>Advantage.</h3>
-                <p className="text-slate-500 font-medium leading-relaxed mb-6">
-                  Maverick connects the three missing pieces of modern operations into a single feedback loop.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 group">
-                    <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <BarChart3 className="w-4 h-4" />
-                    </div>
-                    <span className="text-sm font-black text-slate-700">MEASUREMENT</span>
-                  </div>
-                  <div className="flex items-center space-x-3 group">
-                    <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <ShieldCheck className="w-4 h-4" />
-                    </div>
-                    <span className="text-sm font-black text-slate-700">ACCOUNTABILITY</span>
-                  </div>
-                  <div className="flex items-center space-x-3 group">
-                    <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <Activity className="w-4 h-4" />
-                    </div>
-                    <span className="text-sm font-black text-slate-700">VISIBILITY</span>
-                  </div>
+        // Simple Icon Component to avoid external SVG dependencies
+        const Icon = ({ name, className = "w-6 h-6" }) => {
+            const icons = {
+                zap: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
+                cpu: <rect x="4" y="4" width="16" height="16" rx="2" /><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />,
+                layers: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />,
+                check: <polyline points="20 6 9 17 4 12" />,
+                alert: <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />,
+                arrowRight: <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />,
+                chart: <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />,
+                target: <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />,
+                trophy: <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55.47.98.97 1.21C11.47 18.44 12 19 12 19s.53-.56 1.03-.79c.5-.23.97-.66.97-1.21v-2.34" /><path d="M7 2h10v11c0 2.21-1.79 4-4 4h-2c-2.21 0-4-1.79-4-4V2z" />,
+                phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />,
+                calendar: <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />,
+                trendDown: <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" /><polyline points="17 18 23 18 23 12" />
+            };
+
+            return (
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    className={className}
+                >
+                    {icons[name] || null}
+                </svg>
+            );
+        };
+
+        const App = () => {
+            const [activeScenario, setActiveScenario] = useState('mid');
+
+            const scenarios = {
+                small: {
+                    label: "Small Team (< 10 Agents)",
+                    competitor: "$1,350+",
+                    maverick: "$375",
+                    savings: "72%",
+                    note: "Based on Rev_Acc tier. Replaces niche AI coaching + manual accountability trackers."
+                },
+                mid: {
+                    label: "Mid-Size (10-49 Agents)",
+                    competitor: "$2,949+",
+                    maverick: "$930",
+                    savings: "68%",
+                    note: "70% of Maverick teams fall here. Shilo's AI alone is $1,799 (93% more) with zero CRM reporting or nudging."
+                },
+                enterprise: {
+                    label: "Enterprise (200+ Agents)",
+                    competitor: "$7,300+",
+                    maverick: "$2,200",
+                    savings: "70%",
+                    note: "Competitor 'minute taxes' and seat fees create a 3.3x overhead compared to Maverick's flat enterprise structure."
+                }
+            };
+
+            return (
+                <div className="min-h-screen bg-slate-50 text-maverick-navy pb-20 selection:bg-blue-100">
+                    
+                    {/* 1. HERO SECTION */}
+                    <header className="relative bg-maverick-navy bg-gradient-to-br from-maverick-navy via-maverick-navy to-maverick-blue text-white pt-24 pb-64 px-6 overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+                            <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-maverick-blue rounded-full blur-[160px] animate-pulse" />
+                            <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[120px]" />
+                        </div>
+                        
+                        <div className="max-w-6xl mx-auto relative z-10 text-center">
+                            <img 
+                                src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
+                                alt="Maverick Logo" 
+                                className="h-10 md:h-12 mx-auto mb-10 drop-shadow-lg"
+                            />
+                            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-blue-100 text-[10px] font-black tracking-[0.2em] mb-8 uppercase">
+                                <Icon name="cpu" className="w-3.5 h-3.5 mr-2 text-blue-300 fill-blue-300" />
+                                <span>2024 INMAN INNOVATOR FINALIST • conversionOS</span>
+                            </div>
+                            <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-white">
+                                Maverick is about to be <br/>
+                                <span className="text-gradient italic uppercase">automatic.</span>
+                            </h1>
+                            <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
+                                The intelligent command center for teams of 5-50 agents. <br/>
+                                Stop paying <span className="text-white font-bold">93% more</span> for niche tools that leave gaps in your business.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* 2. THE M.A.V. PILLARS */}
+                    <section className="relative z-30 max-w-6xl mx-auto px-6 -mt-44">
+                        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 p-1 md:p-1.5 border border-slate-100">
+                            <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
+                                <div className="grid lg:grid-cols-3 gap-12 items-center">
+                                    <div className="lg:border-r border-slate-100 lg:pr-12">
+                                        <h3 className="text-3xl font-black tracking-tight mb-4 uppercase">The M.A.V. Advantage.</h3>
+                                        <p className="text-slate-500 font-medium leading-relaxed mb-6">
+                                            Maverick connects the three missing pieces of modern operations into a single feedback loop.
+                                        </p>
+                                        <div className="space-y-4">
+                                            {["MEASUREMENT", "ACCOUNTABILITY", "VISIBILITY"].map((pillar, idx) => (
+                                                <div key={idx} className="flex items-center space-x-3 group">
+                                                    <div className="p-2 bg-blue-50 text-maverick-blue rounded-lg group-hover:bg-maverick-blue group-hover:text-white transition-all">
+                                                        <Icon name={idx === 0 ? "chart" : idx === 1 ? "check" : "zap"} className="w-4 h-4" />
+                                                    </div>
+                                                    <span className="text-sm font-black text-slate-700">{pillar}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="lg:col-span-2 relative">
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                            {[
+                                                { label: "AI Sales Coach", icon: "phone", metric: "100+ Scenarios", comp: "Shilo ($1.7k+)" },
+                                                { label: "Lead Sweeping", icon: "zap", metric: "Real-Time", comp: "Battr ($600+)" },
+                                                { label: "ProDispatch", icon: "zap", metric: "Automated", comp: "Manual / Slow" },
+                                                { label: "ROI Reports", icon: "chart", metric: "Financial", comp: "Spreadsheets" }
+                                            ].map((item, i) => (
+                                                <div key={i} className="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                                                    <div className="text-maverick-blue group-hover:text-maverick-accent transition-colors">
+                                                        <Icon name={item.icon} className="w-8 h-8 mb-4" />
+                                                    </div>
+                                                    <span className="text-sm font-black mb-1 leading-tight">{item.label}</span>
+                                                    <span className="text-[10px] text-maverick-blue font-black uppercase tracking-widest mb-2">{item.metric}</span>
+                                                    <span className="text-[9px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter">Replaces {item.comp}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 3. PERFORMANCE STATS */}
+                    <section className="py-24 max-w-6xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl font-black mb-4 uppercase italic">AICE: AI Sales Coaching That Works</h2>
+                            <p className="text-slate-500 max-w-2xl mx-auto font-medium">Training ISAs and Agents with 100+ role-play scenarios including FSBO, Expireds, and Price Reductions.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[
+                                { val: "2X", label: "Appointment Setting", sub: "From 15% to 30% after AICE", icon: "trophy" },
+                                { val: "30", label: "High-Quality Calls", sub: "In just 2.5 hours of total training", icon: "phone" },
+                                { val: "+36%", label: "Avg Conversion Rate", sub: "Across 9,000+ active users", icon: "chart" }
+                            ].map((stat, i) => (
+                                <div key={i} className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                                        <Icon name={stat.icon} className="w-16 h-16" />
+                                    </div>
+                                    <p className="text-5xl font-black text-maverick-navy mb-2">{stat.val}</p>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{stat.label}</p>
+                                    <p className="text-[11px] text-maverick-blue mt-2 font-bold italic">{stat.sub}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 4. THE USAGE TAX EXPLORER (PRICING) */}
+                    <section className="pb-24 max-w-6xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase">The Spreadsheet Truth.</h2>
+                            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
+                                While competitors charge a "Success Tax" for high usage, Maverick delivers more capability for half the cost.
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
+                            <div className="flex border-b border-slate-100 bg-slate-50/50 no-scrollbar overflow-x-auto">
+                                {Object.keys(scenarios).map((key) => (
+                                    <button
+                                        key={key}
+                                        onClick={() => setActiveScenario(key)}
+                                        className={`flex-1 py-8 px-8 font-black text-[11px] uppercase tracking-[0.2em] transition-all outline-none whitespace-nowrap ${
+                                            activeScenario === key 
+                                            ? 'text-maverick-blue border-b-4 border-maverick-blue bg-white shadow-sm' 
+                                            : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
+                                        }`}
+                                    >
+                                        {scenarios[key].label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div className="p-8 md:p-20">
+                                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                                    <div className="space-y-10">
+                                        <div className="inline-block p-6 rounded-[2.5rem] bg-blue-50 text-maverick-blue shadow-inner">
+                                            <Icon name="trendDown" className="w-14 h-14" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-4xl font-black mb-6 tracking-tight leading-tight uppercase">Paying more <br/>for less.</h3>
+                                            <p className="text-slate-600 leading-relaxed text-xl italic font-medium">
+                                                "If a team wants to over-customize with multiple vendors and pay more, that’s their choice. 
+                                                But if you want one tool that does more for less, Maverick is the smart option."
+                                            </p>
+                                        </div>
+                                        <div className="space-y-4">
+                                            {[
+                                                { t: "Every-Second Monitoring", s: "vs Competitors' Daily Batch Processing" },
+                                                { t: "Real-Time CRM Syncing", s: "90% of our power users leverage Follow Up Boss" }
+                                            ].map((item, i) => (
+                                                <div key={i} className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                                                    <Icon name="check" className="w-6 h-6 text-maverick-blue" />
+                                                    <div>
+                                                        <span className="block font-black text-sm uppercase tracking-wider">{item.t}</span>
+                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter">{item.s}</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-maverick-navy rounded-[4rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-64 h-64 bg-maverick-blue rounded-full blur-[100px] opacity-20 -mr-32 -mt-32" />
+                                        
+                                        <div className="space-y-12 relative z-10 text-center lg:text-left">
+                                            <div className="flex flex-col lg:flex-row justify-between items-center pb-8 border-b border-white/10 gap-4">
+                                                <div>
+                                                    <span className="text-blue-300 font-black uppercase text-[10px] tracking-[0.3em] block mb-2">Competitor Combo</span>
+                                                    <span className="text-4xl font-black text-blue-100/30 line-through tracking-tighter italic">{scenarios[activeScenario].competitor}</span>
+                                                </div>
+                                                <div className="p-3 bg-red-500/10 rounded-xl border border-red-500/20">
+                                                    <Icon name="alert" className="w-6 h-6 text-red-400" />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+                                                <div>
+                                                    <span className="text-blue-400 font-black uppercase text-[10px] tracking-[0.3em] block mb-2">Maverick Pro Package</span>
+                                                    <span className="text-7xl md:text-8xl font-black tracking-tighter leading-none">{scenarios[activeScenario].maverick}<span className="text-2xl font-medium ml-1">/mo</span></span>
+                                                </div>
+                                                <div className="p-5 bg-white rounded-3xl shadow-2xl hidden md:block">
+                                                    <img 
+                                                        src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/Maverick%20Icon%20-%20Blue.png" 
+                                                        alt="Icon" 
+                                                        className="w-12 h-12"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div className="pt-6">
+                                                <div className="flex flex-col items-center justify-center p-12 bg-maverick-blue rounded-[3.5rem] text-white shadow-2xl shadow-blue-500/40 text-center transform hover:scale-[1.02] transition-all">
+                                                    <span className="text-[10px] uppercase font-black tracking-[0.6em] mb-4 text-blue-100">Q1 2024 SAVINGS</span>
+                                                    <span className="text-6xl md:text-7xl font-black tracking-tighter leading-none">{scenarios[activeScenario].savings} <span className="text-3xl">SAVED</span></span>
+                                                    <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic">Integrated vs fragmented</span>
+                                                </div>
+                                                <p className="mt-10 text-center text-[12px] text-blue-200/60 font-black uppercase tracking-[0.2em] leading-loose max-w-xs mx-auto">
+                                                    {scenarios[activeScenario].note}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 5. ROADMAP: WHAT'S NEXT */}
+                    <section className="bg-slate-100 py-32 border-y border-slate-200/50">
+                        <div className="max-w-6xl mx-auto px-6">
+                            <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+                                <div className="max-w-xl">
+                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase">The Road to 2026.</h2>
+                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center to a fully automated Conversion OS. We're building the future of real estate operations.</p>
+                                </div>
+                                <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
+                                    <Icon name="calendar" className="w-5 h-5 text-maverick-blue" />
+                                    <span className="text-sm font-black uppercase tracking-widest">Q1 Release Calendar</span>
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-12 relative">
+                                <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 transform -translate-y-10" />
+                                
+                                {[
+                                    { date: "JANUARY 2026", title: "Automated Nudging", desc: "Automated notifications for Realtor/Residents → Pro → Rev Accelerator tiers.", badge: "LIVE IN BETA", color: "bg-slate-900" },
+                                    { date: "FEBRUARY 2026", title: "Auto-Reassignment", desc: "Target date for automated reassignment logic to ensure zero lead waste.", badge: "IN DEVELOPMENT", color: "bg-maverick-blue" },
+                                    { date: "Q1 2026", title: "Recruiting Module", desc: "Prototype in testing for enterprise teams and Zillow-level recruiting engines.", badge: "PROTOTYPING", color: "bg-slate-200 text-slate-600" }
+                                ].map((item, i) => (
+                                    <div key={i} className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-maverick-blue transition-colors">
+                                        <div className={`absolute -top-4 left-10 px-4 py-2 ${item.color.includes('text') ? item.color : `${item.color} text-white`} rounded-full text-[10px] font-black tracking-widest uppercase`}>
+                                            {item.date}
+                                        </div>
+                                        <h4 className="text-2xl font-black mb-4 uppercase mt-2">{item.title}</h4>
+                                        <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">{item.desc}</p>
+                                        <div className="p-3 bg-blue-50 rounded-xl text-maverick-blue text-[10px] font-black uppercase tracking-widest inline-block">
+                                            {item.badge}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 6. VISION SECTION */}
+                    <section className="py-32 bg-maverick-navy relative overflow-hidden text-white">
+                        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+                            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-400 rounded-full blur-[250px]" />
+                        </div>
+                        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                            <div className="mb-12 inline-block">
+                                <span className="text-blue-400 font-black text-8xl leading-none italic">“</span>
+                            </div>
+                            <h3 className="text-4xl md:text-6xl font-black leading-[1.1] mb-12 tracking-tight uppercase">
+                                Measurement, <br/>
+                                Accountability, <br/>
+                                Visibility. <br/>
+                                <span className="text-blue-400 italic">This is conversionOS.</span>
+                            </h3>
+                            <p className="text-blue-200/60 font-black uppercase tracking-[0.5em] text-[10px]">
+                                MAVERICK Q1 STRATEGIC POSITIONING
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* 7. FOOTER */}
+                    <footer className="bg-white text-maverick-navy py-24 px-6 relative border-t border-slate-200">
+                        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
+                            <div className="text-center md:text-left">
+                                <img 
+                                    src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20Blue.png" 
+                                    alt="Maverick Logo" 
+                                    className="h-8 mb-8 mx-auto md:mx-0"
+                                />
+                                <div className="space-y-2">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-maverick-blue">Automating Human Potential</p>
+                                    <p className="text-slate-400 text-[10px] font-bold">© 2024-2026 Maverick Real Estate Solutions. All rights reserved.</p>
+                                </div>
+                            </div>
+                            
+                            <div className="text-center md:text-right max-w-md">
+                                <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic">Ready to scale?</h5>
+                                <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
+                                    Most teams are overpaying for niche tools by 40-50%. Join 219+ high-performing teams already running on Maverick.
+                                </p>
+                                <button className="group px-12 py-6 bg-maverick-navy hover:bg-maverick-blue text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-maverick-navy/30">
+                                    Run My Pricing Scenario
+                                    <Icon name="arrowRight" className="w-5 h-5 ml-4 group-hover:translate-x-3 transition-transform" />
+                                </button>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-              </div>
-              
-              <div className="lg:col-span-2 relative">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    { label: "AI Sales Coach", icon: PhoneCall, metric: "100+ Scenarios", comp: "Shilo ($1.7k+)" },
-                    { label: "Lead Sweeping", icon: Zap, metric: "Real-Time", comp: "Battr ($600+)" },
-                    { label: "ProDispatch", icon: MousePointer2, metric: "Automated", comp: "Manual / Slow" },
-                    { label: "ROI Reports", icon: PieChart, metric: "Financial", comp: "Spreadsheets" }
-                  ].map((item, i) => (
-                    <div key={i} className="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                      <item.icon className="w-8 h-8 text-[#2a63e4] mb-4" />
-                      <span className="text-sm font-black mb-1">{item.label}</span>
-                      <span className="text-[10px] text-[#2a63e4] font-black uppercase tracking-widest mb-2">{item.metric}</span>
-                      <span className="text-[9px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter">Replaces {item.comp}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            );
+        };
 
-      {/* 3. PERFORMANCE STATS (AICE IMPACT) */}
-      <section className="py-24 max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-black mb-4">AICE: AI Sales Coaching That Works</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto font-medium">Training ISAs and Agents with 100+ role-play scenarios including FSBO, Expireds, and Price Reductions.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-               <Trophy className="w-16 h-16" />
-            </div>
-            <p className="text-5xl font-black text-[#1c1763] mb-2">2X</p>
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Appointment Setting</p>
-            <p className="text-[11px] text-[#2a63e4] mt-2 font-bold italic">From 15% to 30% after AICE</p>
-          </div>
-          <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
-            <p className="text-5xl font-black text-[#1c1763] mb-2">30</p>
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">High-Quality Calls</p>
-            <p className="text-[11px] text-[#2a63e4] mt-2 font-bold italic">In just 2.5 hours of total training</p>
-          </div>
-          <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
-            <p className="text-5xl font-black text-[#1c1763] mb-2">+36%</p>
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Avg Conversion Rate</p>
-            <p className="text-[11px] text-[#2a63e4] mt-2 font-bold italic">Across 9,000+ active users</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. THE USAGE TAX EXPLORER (PRICING) */}
-      <section className="pb-24 max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic">The Spreadsheet Truth.</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
-            While competitors charge a "Success Tax" for high usage, Maverick delivers more capability for half the cost.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
-          <div className="flex border-b border-slate-100 bg-slate-50/50 overflow-x-auto">
-            {Object.keys(scenarios).map((key) => (
-              <button
-                key={key}
-                onClick={() => setActiveScenario(key)}
-                className={`flex-1 py-8 px-8 font-black text-[11px] uppercase tracking-[0.2em] transition-all outline-none whitespace-nowrap ${
-                  activeScenario === key 
-                  ? 'text-[#2a63e4] border-b-4 border-[#2a63e4] bg-white shadow-sm' 
-                  : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
-                }`}
-              >
-                {scenarios[key].label}
-              </button>
-            ))}
-          </div>
-
-          <div className="p-8 md:p-20">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="space-y-10">
-                <div className="inline-block p-6 rounded-[2.5rem] bg-blue-50 text-[#2a63e4] shadow-inner">
-                  <TrendingDown className="w-14 h-14" />
-                </div>
-                <div>
-                  <h3 className="text-4xl font-black mb-6 tracking-tight leading-tight">Paying more <br/>for less.</h3>
-                  <p className="text-slate-600 leading-relaxed text-xl italic font-medium">
-                    "If a team wants to over-customize with multiple vendors and pay more, that’s their choice. 
-                    But if you want one tool that does more for less, Maverick is the smart option."
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <CheckCircle2 className="w-6 h-6 text-[#2a63e4]" />
-                    <div>
-                      <span className="block font-black text-sm uppercase tracking-wider">Every-Second Monitoring</span>
-                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter">vs Competitors' Daily Batch Processing</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <CheckCircle2 className="w-6 h-6 text-[#2a63e4]" />
-                    <div>
-                      <span className="block font-black text-sm uppercase tracking-wider">Real-Time CRM Syncing</span>
-                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter">90% of our power users leverage Follow Up Boss</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#1c1763] rounded-[4rem] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#2a63e4] rounded-full blur-[100px] opacity-20 -mr-32 -mt-32" />
-                
-                <div className="space-y-12 relative z-10">
-                  <div className="flex justify-between items-center pb-8 border-b border-white/10">
-                    <div>
-                      <span className="text-blue-300 font-black uppercase text-[10px] tracking-widest block mb-2 tracking-[0.3em]">Competitor Combo</span>
-                      <span className="text-4xl font-black text-blue-100/30 line-through tracking-tighter italic">{scenarios[activeScenario].competitor}</span>
-                    </div>
-                    <div className="p-3 bg-red-500/10 rounded-xl border border-red-500/20">
-                      <AlertCircle className="w-6 h-6 text-red-400" />
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <span className="text-blue-400 font-black uppercase text-[10px] tracking-widest block mb-2 tracking-[0.3em]">Maverick Pro Package</span>
-                      <span className="text-8xl font-black tracking-tighter leading-none">{scenarios[activeScenario].maverick}<span className="text-2xl font-medium ml-1">/mo</span></span>
-                    </div>
-                    <div className="p-5 bg-white rounded-3xl shadow-2xl hidden md:block">
-                       <img 
-                          src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/Maverick%20Icon%20-%20Blue.png" 
-                          alt="Icon" 
-                          className="w-12 h-12"
-                        />
-                    </div>
-                  </div>
-
-                  <div className="pt-6">
-                    <div className="flex flex-col items-center justify-center p-12 bg-[#2a63e4] rounded-[3.5rem] text-white shadow-2xl shadow-blue-500/40 text-center transform hover:scale-[1.02] transition-all">
-                      <span className="text-[10px] uppercase font-black tracking-[0.6em] mb-4 text-blue-100">Q1 2024 SAVINGS</span>
-                      <span className="text-7xl font-black tracking-tighter leading-none">{scenarios[activeScenario].savings} <span className="text-3xl">SAVED</span></span>
-                      <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic">Integrated vs fragmented</span>
-                    </div>
-                    <p className="mt-10 text-center text-[12px] text-blue-200/60 font-black uppercase tracking-[0.2em] leading-loose max-w-xs mx-auto">
-                      {scenarios[activeScenario].note}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. ROADMAP: WHAT'S NEXT (Q1 2026) */}
-      <section className="bg-slate-100 py-32 border-y border-slate-200/50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-            <div className="max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">The Road to 2026.</h2>
-              <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center to a fully automated Conversion OS. We're building the future of real estate operations.</p>
-            </div>
-            <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
-              <Calendar className="w-5 h-5 text-blue-500" />
-              <span className="text-sm font-black uppercase tracking-widest">Q1 Release Calendar</span>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 relative">
-            {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 transform -translate-y-10" />
-            
-            <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-blue-400 transition-colors">
-              <div className="absolute -top-6 left-10 px-4 py-2 bg-slate-900 text-white rounded-full text-[10px] font-black tracking-widest uppercase">JANUARY 2026</div>
-              <h4 className="text-2xl font-black mb-4">Automated Nudging</h4>
-              <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Automated notifications for Realtor/Residents → Pro → Rev Accelerator tiers.</p>
-              <div className="p-3 bg-blue-50 rounded-xl text-blue-600 text-[10px] font-black uppercase tracking-widest inline-block">LIVE IN BETA</div>
-            </div>
-
-            <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-blue-400 transition-colors">
-              <div className="absolute -top-6 left-10 px-4 py-2 bg-blue-600 text-white rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
-              <h4 className="text-2xl font-black mb-4">Auto-Reassignment</h4>
-              <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
-              <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block">IN DEVELOPMENT</div>
-            </div>
-
-            <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-blue-400 transition-colors">
-              <div className="absolute -top-6 left-10 px-4 py-2 bg-slate-200 text-slate-600 rounded-full text-[10px] font-black tracking-widest uppercase">Q1 2026</div>
-              <h4 className="text-2xl font-black mb-4">Recruiting Module</h4>
-              <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Prototype in testing for enterprise teams and Zillow-level recruiting engines.</p>
-              <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block">PROTOTYPING</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. QUOTE & VISION SECTION */}
-      <section className="py-32 bg-[#1c1763] relative overflow-hidden text-white">
-         <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-400 rounded-full blur-[250px]" />
-         </div>
-         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <div className="mb-12 inline-block">
-               <span className="text-blue-400 font-black text-8xl leading-none italic">“</span>
-            </div>
-            <h3 className="text-4xl md:text-6xl font-black leading-[1.1] mb-12 tracking-tight">
-               Measurement, <br/>
-               Accountability, <br/>
-               Visibility. <br/>
-               <span className="text-blue-400 italic">This is conversionOS.</span>
-            </h3>
-            <p className="text-blue-200/60 font-black uppercase tracking-[0.5em] text-[10px]">
-               MAVERICK Q1 STRATEGIC POSITIONING
-            </p>
-         </div>
-      </section>
-
-      {/* 7. FOOTER / CTA */}
-      <footer className="bg-white text-[#1c1763] py-24 px-6 relative border-t border-slate-200">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
-          <div className="text-center md:text-left">
-            <img 
-              src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20Blue.png" 
-              alt="Maverick Logo" 
-              className="h-8 mb-8 mx-auto md:mx-0"
-            />
-            <div className="space-y-2">
-              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#2a63e4]">Automating Human Potential</p>
-              <p className="text-slate-400 text-[10px] font-bold">© 2024-2026 Maverick Real Estate Solutions. All rights reserved.</p>
-            </div>
-          </div>
-          
-          <div className="text-center md:text-right max-w-md">
-            <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic">Ready to scale?</h5>
-            <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
-               Most teams are overpaying for niche tools by 40-50%. Join 219+ high-performing teams already running on Maverick.
-            </p>
-            <button className="group px-12 py-6 bg-[#1c1763] hover:bg-[#2a63e4] text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-[#1c1763]/30">
-              Run My Pricing Scenario
-              <ArrowRight className="w-5 h-5 ml-4 group-hover:translate-x-3 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default App;
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
