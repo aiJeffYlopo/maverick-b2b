@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maverick | Q1 2026 Strategic Campaign</title>
+    <title>Maverick | More Sales, More Quickly</title>
     
     <!-- 1. Load Fonts and Tailwind CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,21 +150,21 @@
                     competitor: "$1,350+",
                     maverick: "$375",
                     savings: "72%",
-                    note: "Based on Rev_Acc tier ($375). Replaces niche AI coaching tools plus separate accountability trackers."
+                    note: "Based on Rev_Acc tier. Replaces niche coaching + manual spreadsheets."
                 },
                 mid: {
                     label: "Mid-Size (10-49 Agents)",
                     competitor: "$2,949+",
                     maverick: "$930",
                     savings: "68%",
-                    note: "70% of teams fall here. Shilo's AI alone costs $1,799 (93% more than Maverick Pro) and lacks reporting or distribution logic."
+                    note: "Teams with high call volume pay way more for competitors' metered billing."
                 },
                 enterprise: {
                     label: "Enterprise (200+ Agents)",
                     competitor: "$7,300+",
                     maverick: "$2,200",
                     savings: "70%",
-                    note: "Competitor 'success taxes' and seat fees create 3.3x overhead compared to Maverick's flat structure."
+                    note: "Competitors charge you more just for being successful. Maverick is one flat price."
                 }
             };
 
@@ -189,16 +189,17 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
-                            {/* Headline: Campaign Image */}
+                            {/* Headline: APPROVED CAMPAIGN MOCKUP */}
                             <img 
                                 src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Campaigns/2026/01/automatic-v1/MaverickRE%20is%20about%20to%20be%20Automatic-mock.png" 
                                 alt="Maverick is about to be Automatic" 
                                 className="mx-auto max-w-4xl w-full h-auto mb-8 drop-shadow-2xl"
                             />
                             
-                            <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
-                                The intelligent command center for teams of 5+ agents. <br/>
-                                Stop paying <span className="text-white font-bold underline decoration-blue-400 decoration-2 underline-offset-4">93% more</span> for niche tools that leave gaps in your business.
+                            <p className="text-2xl md:text-4xl font-bold tracking-tight mb-4 uppercase">More Sales, More Quickly.</p>
+                            <p className="text-lg md:text-xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
+                                The sales acceleration tool for teams of 5+ agents. <br/>
+                                Stop paying <span className="text-white font-bold underline decoration-blue-400 decoration-2 underline-offset-4">93% more</span> for niche tools that don't talk to each other.
                             </p>
                         </div>
                     </header>
@@ -209,17 +210,17 @@
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
                                 <div className="grid lg:grid-cols-3 gap-12 items-center">
                                     <div className="lg:border-r border-slate-100 lg:pr-12">
-                                        <h3 className="text-3xl font-black tracking-tight mb-4 uppercase leading-none">The M.A.V. Advantage.</h3>
+                                        <h3 className="text-3xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">Measurement. Accountability. Visibility.</h3>
                                         <p className="text-slate-500 font-medium leading-relaxed mb-6">
-                                            Maverick connects the three missing pieces of modern operations into a single feedback loop.
+                                            Maverick is automatically watching your database 24/7 and instantly alerting you the moment there is a high-value buyer or seller opportunity.
                                         </p>
-                                        <div className="space-y-4 text-[#1c1763]">
-                                            {["MEASUREMENT", "ACCOUNTABILITY", "VISIBILITY"].map((pillar, idx) => (
+                                        <div className="space-y-4">
+                                            {["DATABASE MONITORING", "AGENT COACHING", "PERFORMANCE TRACKING"].map((pill, idx) => (
                                                 <div key={idx} className="flex items-center space-x-3 group cursor-default">
                                                     <div className="p-2 bg-blue-50 text-[#2a63e4] rounded-lg group-hover:bg-[#1c1763] group-hover:text-white transition-all">
-                                                        <Icon name={idx === 0 ? "chart" : idx === 1 ? "check" : "zap"} className="w-4 h-4" />
+                                                        <Icon name={idx === 0 ? "zap" : idx === 1 ? "phone" : "chart"} className="w-4 h-4" />
                                                     </div>
-                                                    <span className="text-sm font-black tracking-wide uppercase">{pillar}</span>
+                                                    <span className="text-sm font-black tracking-wide uppercase text-[#1c1763]">{pill}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -228,10 +229,10 @@
                                     <div className="lg:col-span-2 relative">
                                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                             {[
-                                                { label: "AI Sales Coach", sub: "Objective Grading", icon: "phone", metric: "100+ Scenarios", comp: "Shilo ($1.7k+)" },
-                                                { label: "Lead Recovery", sub: "Restoration Focus", icon: "zap", metric: "3-Stage Loop", comp: "Battr ($600+)" },
-                                                { label: "ProDispatch", sub: "Right Agent Right Time", icon: "calendar", metric: "Appt Routing", comp: "Manual Effort" },
-                                                { label: "Conversion Intel", sub: "Measure What Matters", icon: "chart", metric: "Full Funnel", comp: "Spreadsheets" }
+                                                { label: "AI Sales Coach", sub: "Ace 24/7", icon: "phone", metric: "Double Appointments", comp: "Shilo ($1.7k+)" },
+                                                { label: "Lead Recovery", sub: "Restore Opps", icon: "zap", metric: "Database Watch", comp: "Battr ($600+)" },
+                                                { label: "ProDispatch", sub: "Right Agent", icon: "calendar", metric: "Smart Routing", comp: "Manual Effort" },
+                                                { label: "Conversion Intel", sub: "Measure ROI", icon: "chart", metric: "Full Visibility", comp: "Spreadsheets" }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                                                     <div className="text-[#2a63e4] group-hover:text-[#354095] transition-colors">
@@ -240,7 +241,7 @@
                                                     <span className="text-sm font-black mb-1 leading-tight">{item.label}</span>
                                                     <span className="text-[9px] text-[#2a63e4] font-black uppercase tracking-widest mb-1">{item.sub}</span>
                                                     <span className="text-[10px] text-slate-500 font-bold mb-2">{item.metric}</span>
-                                                    <span className="text-[9px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter">Replaces {item.comp}</span>
+                                                    <span className="text-[9px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase">Replaces {item.comp}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -253,14 +254,14 @@
                     {/* 3. PERFORMANCE STATS */}
                     <section className="py-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl font-black mb-4 uppercase italic">AICE: AI Sales Coaching That Works</h2>
-                            <p className="text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Training ISAs and Agents with 100+ role-play scenarios including FSBO, Expireds, and Price Reductions.</p>
+                            <h2 className="text-3xl font-black mb-4 uppercase italic">ACE: The AI Coach That Works for You 24/7</h2>
+                            <p className="text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Agents improve their conversion rates and set more appointments by practicing with 100+ role-play scenarios.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-[#1c1763]">
                             {[
-                                { val: "2X", label: "Appointment Setting", sub: "From 15% to 30% after AICE", icon: "trophy" },
-                                { val: "30", label: "High-Quality Calls", sub: "In just 2.5 hours of total training", icon: "phone" },
-                                { val: "+36%", label: "Avg Conversion Rate", sub: "Across 9,000+ active users", icon: "chart" }
+                                { val: "2X", label: "Increase in Appointments", sub: "Agents double their appointment set rate", icon: "trophy" },
+                                { val: "36%", label: "Conversion Increase", sub: "Average improvement for Maverick teams", icon: "chart" },
+                                { val: "+$100M", label: "Attributed Volume", sub: "Real sales for our top partners", icon: "phone" }
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -274,12 +275,12 @@
                         </div>
                     </section>
 
-                    {/* 4. THE USAGE TAX EXPLORER (PRICING) */}
+                    {/* 4. PRICING EXPLORER */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none">The Spreadsheet Truth.</h2>
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none">Don't fall for the bait and switch.</h2>
                             <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
-                                While competitors charge a "Success Tax" for high usage, Maverick delivers more capability for half the cost.
+                                With competitors, the more you use the tools, the more you pay. Maverick is a flat package built for teams that actually want to grow.
                             </p>
                         </div>
 
@@ -307,22 +308,21 @@
                                             <Icon name="trendDown" className="w-14 h-14" />
                                         </div>
                                         <div>
-                                            <h3 className="text-4xl font-black mb-6 tracking-tight leading-none uppercase">Paying more <br/>for less.</h3>
+                                            <h3 className="text-4xl font-black mb-6 tracking-tight leading-none uppercase">More Capability.<br/>Lower Cost.</h3>
                                             <p className="text-slate-600 leading-relaxed text-xl italic font-medium">
-                                                "If a team wants to over-customize with multiple vendors and pay more, that’s their choice. 
-                                                But if you want one tool that does more for less, Maverick is the smart option."
+                                                "At the same number of agents and same usage, you're going to spend way more licensing multiple tools than just licensing Maverick."
                                             </p>
                                         </div>
                                         <div className="space-y-4">
                                             {[
-                                                { t: "Every-Second Monitoring", s: "vs Competitors' Daily Batch Processing" },
-                                                { t: "Real-Time CRM Syncing", s: "90% of our power users leverage Follow Up Boss" }
+                                                { t: "Every-Second Monitoring", s: "Never miss an opportunity in your database" },
+                                                { t: "Real-Time CRM Syncing", s: "No more manual exporting and importing data" }
                                             ].map((item, i) => (
                                                 <div key={i} className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
                                                     <Icon name="check" className="w-6 h-6 text-[#2a63e4]" />
                                                     <div>
                                                         <span className="block font-black text-sm uppercase tracking-wider">{item.t}</span>
-                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter">{item.s}</span>
+                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter italic">{item.s}</span>
                                                     </div>
                                                 </div>
                                             ))}
@@ -335,7 +335,7 @@
                                         <div className="space-y-12 relative z-10 text-center lg:text-left">
                                             <div className="flex flex-col lg:flex-row justify-between items-center pb-8 border-b border-white/10 gap-4">
                                                 <div>
-                                                    <span className="text-blue-300 font-black uppercase text-[10px] tracking-[0.3em] block mb-2">Competitor Combo</span>
+                                                    <span className="text-blue-300 font-black uppercase text-[10px] tracking-[0.3em] block mb-2">Competing Tool Stack</span>
                                                     <span className="text-4xl font-black text-blue-100/30 line-through tracking-tighter italic">{scenarios[activeScenario].competitor}</span>
                                                 </div>
                                                 <div className="p-3 bg-red-500/10 rounded-xl border border-red-500/20">
@@ -345,7 +345,7 @@
 
                                             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
                                                 <div className="flex-1">
-                                                    <span className="text-blue-400 font-black uppercase text-[10px] tracking-[0.3em] block mb-2 leading-none">Maverick Pro Package</span>
+                                                    <span className="text-blue-400 font-black uppercase text-[10px] tracking-[0.3em] block mb-2 leading-none">Maverick Package</span>
                                                     <span className="text-7xl md:text-8xl font-black tracking-tighter leading-none">{scenarios[activeScenario].maverick}<span className="text-2xl font-medium ml-1 tracking-normal opacity-50">/mo</span></span>
                                                 </div>
                                             </div>
@@ -354,7 +354,7 @@
                                                 <div className="flex flex-col items-center justify-center p-12 bg-[#2a63e4] rounded-[3.5rem] text-white shadow-2xl shadow-blue-500/40 text-center transform hover:scale-[1.02] transition-all cursor-default">
                                                     <span className="text-[10px] uppercase font-black tracking-[0.6em] mb-4 text-blue-100 uppercase">Q1 2026 SAVINGS</span>
                                                     <span className="text-6xl md:text-7xl font-black tracking-tighter leading-none">{scenarios[activeScenario].savings} <span className="text-3xl tracking-tight">SAVED</span></span>
-                                                    <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic">Integrated vs fragmented</span>
+                                                    <span className="mt-6 text-[11px] font-black uppercase tracking-widest opacity-80 italic italic">All-in-one vs stitching tools</span>
                                                 </div>
                                                 <p className="mt-10 text-center text-[12px] text-blue-200/60 font-black uppercase tracking-[0.2em] leading-loose max-w-xs mx-auto">
                                                     {scenarios[activeScenario].note}
@@ -367,17 +367,17 @@
                         </div>
                     </section>
 
-                    {/* 5. ROADMAP: WHAT'S NEXT */}
+                    {/* 5. ROADMAP (Restored to Original Version) */}
                     <section className="bg-slate-100 py-32 border-y border-slate-200/50 fade-in">
                         <div className="max-w-6xl mx-auto px-6">
                             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
                                 <div className="max-w-xl">
-                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none">The Road to 2026.</h2>
-                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center into a fully automated operations engine. We're building the future of real estate operations.</p>
+                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none text-[#1c1763]">The Road to 2026.</h2>
+                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center into a fully automated operations engine. We're building the future of real estate sales.</p>
                                 </div>
                                 <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
                                     <Icon name="calendar" className="w-5 h-5 text-[#2a63e4]" />
-                                    <span className="text-sm font-black uppercase tracking-widest">Q1 Release Calendar</span>
+                                    <span className="text-sm font-black uppercase tracking-widest text-[#1c1763]">Q1 Release Calendar</span>
                                 </div>
                             </div>
 
@@ -447,7 +447,7 @@
                             <div className="text-center md:text-right max-w-md">
                                 <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic leading-none">Ready to scale?</h5>
                                 <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
-                                    Most teams are overpaying for niche tools by 40-50%. Join 219+ high-performing teams already running on Maverick.
+                                    Stitching together three or four different tools is costing you 3x more than Maverick. Run your comparison today.
                                 </p>
                                 <button className="group px-12 py-6 bg-[#1c1763] hover:bg-[#2a63e4] text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-[#1c1763]/30">
                                     Run My Pricing Scenario
