@@ -205,7 +205,7 @@
                             </div>
                             
                             <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
-                                Fully automated sales acceleration for teams of any size. <br/>
+                                Fully automated sales acceleration for real estate teams of any size. <br/>
                                 Maverick watches your database 24/7 and alerts your team the <span className="text-white font-bold">moment</span> a high-value opportunity occurs.
                             </p>
                         </div>
@@ -213,47 +213,60 @@
 
                     {/* 2. THE PILLARS (Measurement, Accountability, Visibility) */}
                     <section className="relative z-30 max-w-6xl mx-auto px-6 -mt-44 fade-in">
-                        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 p-1 md:p-1.5 border border-slate-100">
+                        <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 p-1 md:p-1.5 border border-slate-100 overflow-hidden">
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
                                 <div className="grid lg:grid-cols-3 gap-12 items-center">
                                     <div className="lg:border-r border-slate-100 lg:pr-12">
                                         <h3 className="text-3xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">Measurement.<br/>Accountability.<br/>Visibility.</h3>
-                                        <p className="text-slate-500 font-medium leading-relaxed mb-6">
+                                        <p className="text-slate-500 font-medium leading-relaxed">
                                             "You cannot hide from Maverick. If you're not doing your job, you're going to stand out like a sore thumb." 
                                             We find all the places things are slipping through the cracks.
                                         </p>
-                                        <div className="space-y-4">
-                                            {[
-                                                { label: "Precision Data", icon: "chart" },
-                                                { label: "Smarter Strategy", icon: "cpu" },
-                                                { label: "Faster Wins", icon: "zap" }
-                                            ].map((pill, idx) => (
-                                                <div key={idx} className="flex items-center space-x-3 group cursor-default">
-                                                    <div className="p-2 bg-blue-50 text-[#2a63e4] rounded-lg group-hover:bg-[#1c1763] group-hover:text-white transition-all">
-                                                        <Icon name={pill.icon} className="w-4 h-4" />
-                                                    </div>
-                                                    <span className="text-sm font-black tracking-wide uppercase text-[#1c1763]">{pill.label}</span>
-                                                </div>
-                                            ))}
-                                        </div>
                                     </div>
                                     
                                     <div className="lg:col-span-2 relative">
-                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        {/* 2x2 Grid Format for easier reading */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
-                                                { label: "AI Sales Coach", sub: "CONVERT MORE CALLS INTO APPOINTMENTS", icon: "phone", metric: "Role-Play 24/7", comp: "Shilo ($1.7k+)" },
-                                                { label: "Rules & Alerts", sub: "FOCUS ON THE RIGHT OPPORTUNITIES", icon: "zap", metric: "Opportunity Watch", comp: "Battr ($600+)" },
-                                                { label: "ProDispatch", sub: "INTELLIGENT LEAD ROUTING", icon: "calendar", metric: "Appt Routing", comp: "Manual Effort" },
-                                                { label: "Conversion Intel", sub: "MEASURE WHAT MATTERS", icon: "chart", metric: "No Gaps", comp: "Spreadsheets" }
+                                                { 
+                                                    label: "AI Sales Coach", 
+                                                    sub: "CONVERT MORE CALLS INTO APPOINTMENTS", 
+                                                    icon: "phone", 
+                                                    metric: "Role-Play 24/7", 
+                                                    comp: "Shilo ($1.7k+)" 
+                                                },
+                                                { 
+                                                    label: "Rules & Alerts", 
+                                                    sub: "NEVER MISS OPPORTUNITIES", 
+                                                    icon: "zap", 
+                                                    metric: "REAL-TIME DATABASE SCAN", 
+                                                    comp: "Battr ($600+)" 
+                                                },
+                                                { 
+                                                    label: "Pro-Dispatch", 
+                                                    sub: "ROUTE LEADS BASED ON PRICE POINT, SOURCE, OR LOCATION", 
+                                                    icon: "calendar", 
+                                                    metric: "INTELLIGENT LEAD ROUTING", 
+                                                    comp: "Manual Effort" 
+                                                },
+                                                { 
+                                                    label: "Conversion Intel", 
+                                                    sub: "MEASURE METRICS THAT MATTER", 
+                                                    icon: "chart", 
+                                                    metric: "Calls, Conversations, Appointments, Conversions", 
+                                                    comp: "Spreadsheets" 
+                                                }
                                             ].map((item, i) => (
-                                                <div key={i} className="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                                                <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                                                     <div className="text-[#2a63e4] group-hover:text-[#354095] transition-colors">
-                                                        <Icon name={item.icon} className="w-8 h-8 mb-4" />
+                                                        <Icon name={item.icon} className="w-10 h-10 mb-6" />
                                                     </div>
-                                                    <span className="text-sm font-black mb-1 leading-tight">{item.label}</span>
-                                                    <span className="text-[9px] text-[#2a63e4] font-black uppercase tracking-widest mb-1 leading-tight">{item.sub}</span>
-                                                    <span className="text-[10px] text-slate-500 font-bold mb-2 uppercase">{item.metric}</span>
-                                                    <span className="text-[9px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase leading-none">Replaces {item.comp}</span>
+                                                    <span className="text-xl font-black mb-2 text-[#1c1763]">{item.label}</span>
+                                                    <span className="text-[10px] text-[#2a63e4] font-black uppercase tracking-widest mb-3 leading-tight px-4">{item.sub}</span>
+                                                    <span className="text-xs text-slate-500 font-bold mb-4">{item.metric}</span>
+                                                    <div className="mt-auto pt-4 border-t border-slate-200 w-full">
+                                                        <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase">Replaces {item.comp}</span>
+                                                    </div>
                                                 </div>
                                             ))}
                                         </div>
