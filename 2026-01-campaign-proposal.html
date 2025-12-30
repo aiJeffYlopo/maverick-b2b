@@ -23,11 +23,6 @@
             font-family: 'Poppins', sans-serif !important;
             scroll-behavior: smooth;
         }
-        .text-gradient {
-            background: linear-gradient(to r, #93c5fd, #dbeafe, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         #root {
             min-height: 100vh;
         }
@@ -38,12 +33,12 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Fade in animation for content */
+        /* Standard fade-in for better entrance */
         .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -72,7 +67,7 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Fixed Icon Component with Fragment wrappers for multiple children
+        // Optimized Icon Component
         const Icon = ({ name, className = "w-6 h-6" }) => {
             const icons = {
                 zap: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
@@ -204,13 +199,18 @@
                                 <Icon name="cpu" className="w-3.5 h-3.5 mr-2 text-blue-300 fill-blue-300" />
                                 <span>2024 INMAN INNOVATOR FINALIST • conversionOS</span>
                             </div>
-                            <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-white">
+                            
+                            {/* FIXED HEADLINE: Removed custom CSS class for native Tailwind gradient to fix invisibility issue */}
+                            <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[1.05] text-white">
                                 Maverick is about to be <br/>
-                                <span className="text-gradient italic uppercase">automatic.</span>
+                                <span className="inline-block bg-gradient-to-r from-blue-300 via-blue-100 to-white bg-clip-text text-transparent italic uppercase">
+                                    automatic.
+                                </span>
                             </h1>
+                            
                             <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
                                 The intelligent command center for teams of 5-50 agents. <br/>
-                                Stop paying <span className="text-white font-bold underline decoration-blue-400">93% more</span> for niche tools that leave gaps in your business.
+                                Stop paying <span className="text-white font-bold underline decoration-blue-400 decoration-2 underline-offset-4">93% more</span> for niche tools that leave gaps in your business.
                             </p>
                         </div>
                     </header>
@@ -221,7 +221,7 @@
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
                                 <div className="grid lg:grid-cols-3 gap-12 items-center">
                                     <div className="lg:border-r border-slate-100 lg:pr-12">
-                                        <h3 className="text-3xl font-black tracking-tight mb-4 uppercase">The M.A.V. Advantage.</h3>
+                                        <h3 className="text-3xl font-black tracking-tight mb-4 uppercase leading-none">The M.A.V. Advantage.</h3>
                                         <p className="text-slate-500 font-medium leading-relaxed mb-6">
                                             Maverick connects the three missing pieces of modern operations into a single feedback loop.
                                         </p>
@@ -231,7 +231,7 @@
                                                     <div className="p-2 bg-blue-50 text-[#2a63e4] rounded-lg group-hover:bg-[#1c1763] group-hover:text-white transition-all">
                                                         <Icon name={idx === 0 ? "chart" : idx === 1 ? "check" : "zap"} className="w-4 h-4" />
                                                     </div>
-                                                    <span className="text-sm font-black tracking-wide">{pillar}</span>
+                                                    <span className="text-sm font-black tracking-wide uppercase">{pillar}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -288,7 +288,7 @@
                     {/* 4. THE USAGE TAX EXPLORER (PRICING) */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase">The Spreadsheet Truth.</h2>
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none">The Spreadsheet Truth.</h2>
                             <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
                                 While competitors charge a "Success Tax" for high usage, Maverick delivers more capability for half the cost.
                             </p>
@@ -318,7 +318,7 @@
                                             <Icon name="trendDown" className="w-14 h-14" />
                                         </div>
                                         <div>
-                                            <h3 className="text-4xl font-black mb-6 tracking-tight leading-tight uppercase">Paying more <br/>for less.</h3>
+                                            <h3 className="text-4xl font-black mb-6 tracking-tight leading-none uppercase">Paying more <br/>for less.</h3>
                                             <p className="text-slate-600 leading-relaxed text-xl italic font-medium">
                                                 "If a team wants to over-customize with multiple vendors and pay more, that’s their choice. 
                                                 But if you want one tool that does more for less, Maverick is the smart option."
@@ -390,7 +390,7 @@
                         <div className="max-w-6xl mx-auto px-6">
                             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
                                 <div className="max-w-xl">
-                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase">The Road to 2026.</h2>
+                                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none">The Road to 2026.</h2>
                                     <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center to a fully automated Conversion OS. We're building the future of real estate operations.</p>
                                 </div>
                                 <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
@@ -411,7 +411,7 @@
                                         <div className={`absolute -top-4 left-10 px-4 py-2 ${item.color.includes('text') ? item.color : `${item.color} text-white`} rounded-full text-[10px] font-black tracking-widest uppercase`}>
                                             {item.date}
                                         </div>
-                                        <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763]">{item.title}</h4>
+                                        <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">{item.title}</h4>
                                         <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">{item.desc}</p>
                                         <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">
                                             {item.badge}
@@ -435,7 +435,7 @@
                                 Measurement, <br/>
                                 Accountability, <br/>
                                 Visibility. <br/>
-                                <span className="text-blue-400 italic tracking-tighter">This is conversionOS.</span>
+                                <span className="text-blue-400 italic tracking-tighter leading-none">This is conversionOS.</span>
                             </h3>
                             <p className="text-blue-200/60 font-black uppercase tracking-[0.5em] text-[10px]">
                                 MAVERICK Q1 STRATEGIC POSITIONING
