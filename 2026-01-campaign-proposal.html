@@ -1,0 +1,328 @@
+import React, { useState } from 'react';
+import { 
+  Zap, 
+  Layers, 
+  TrendingDown, 
+  ShieldCheck, 
+  Users, 
+  Monitor, 
+  Smartphone, 
+  CheckCircle2, 
+  AlertCircle,
+  ArrowRight,
+  TrendingUp,
+  BarChart3,
+  Search
+} from 'lucide-react';
+
+const App = () => {
+  const [activeScenario, setActiveScenario] = useState('mid');
+
+  const scenarios = {
+    small: {
+      label: "Small Team (1-5 Agents)",
+      competitor: "$450+",
+      maverick: "$249*",
+      savings: "45%",
+      note: "Based on standard metered minutes and 3 tool subscriptions."
+    },
+    mid: {
+      label: "Mid-Size Team (6-20 Agents)",
+      competitor: "$1,800+",
+      maverick: "$950*",
+      savings: "47%",
+      note: "Competitor costs balloon as usage and seat counts scale."
+    },
+    large: {
+      label: "Heavy Dialers (20+ Agents)",
+      competitor: "$4,200+",
+      maverick: "$2,100*",
+      savings: "50%",
+      note: "Flat structure prevents the 'success tax' on high-volume teams."
+    }
+  };
+
+  return (
+    <div id="maverick-campaign-root" className="min-h-screen bg-slate-50 text-[#1c1763] pb-20">
+      {/* 1. HERO SECTION */}
+      <header className="relative bg-gradient-to-br from-[#1c1763] via-[#2a63e4] to-[#354095] text-white py-20 px-6 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10 text-center">
+          <img 
+            src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
+            alt="Maverick Logo" 
+            className="h-12 mx-auto mb-12"
+          />
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 text-sm font-medium mb-6">
+            <Zap className="w-4 h-4 mr-2" />
+            <span>Q1 2024 POSITIONING</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+            Maverick is about to be <span className="text-blue-300">automatic.</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
+            Stop duct-taping your business together. One platform to automate visibility, 
+            coaching, and accountability—for 50% less.
+          </p>
+        </div>
+      </header>
+
+      {/* 2. THE CONSOLIDATION STORY */}
+      <section className="max-w-6xl mx-auto px-6 -mt-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Fragmented Stack */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="p-3 bg-red-50 rounded-2xl">
+                <AlertCircle className="w-6 h-6 text-red-500" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">The "Duct-Tape" Stack</h3>
+                <p className="text-sm text-slate-500">Manual, expensive, and fragile</p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                "Stand-alone Dialers & VOIP",
+                "Fragmented Analytics Tools",
+                "Manual Coaching Spreadsheets",
+                "Disconnected Accountability Trackers",
+                "High Admin Maintenance Hours"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center p-4 bg-slate-50 rounded-xl border border-dashed border-slate-300 grayscale opacity-70">
+                  <div className="w-2 h-2 rounded-full bg-slate-400 mr-4" />
+                  <span className="text-slate-600 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-slate-100">
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="text-sm text-slate-400 uppercase tracking-wider font-bold">Total Estimated Cost</p>
+                  <p className="text-3xl font-bold text-slate-400">$1,800+/mo</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded font-bold">INEFFICIENT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Maverick Integration */}
+          <div className="bg-[#1c1763] rounded-3xl shadow-2xl p-8 border border-white/10 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4">
+              <img 
+                src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Icon%20-%20White%20and%20Blue.png" 
+                alt="Icon" 
+                className="w-12 h-12 opacity-20"
+              />
+            </div>
+            
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="p-3 bg-blue-500 rounded-2xl">
+                <CheckCircle2 className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">The Maverick System</h3>
+                <p className="text-sm text-blue-300">Automated, integrated, and simple</p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                "Integrated Dialer & Communications",
+                "Real-time Visibility & Analytics",
+                "Automated Accountability Loops",
+                "Digital Coaching Workflows",
+                "Zero-maintenance Infrastructure"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-2 h-2 rounded-full bg-blue-400 mr-4 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
+                  <span className="text-blue-50 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="text-sm text-blue-300 uppercase tracking-wider font-bold">Integrated Cost</p>
+                  <p className="text-3xl font-bold text-white">$950/mo*</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-xs bg-green-500 text-white px-2 py-1 rounded font-bold uppercase tracking-widest animate-pulse">40-50% Savings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. VALUE ANGLE & PRICING SCENARIOS */}
+      <section className="py-24 max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold mb-4">Don't Get Taxed for Using Your Tools</h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+            Competitors use metered minutes and usage-based pricing that punishes growth. 
+            Maverick's flat structure ensures your costs don't balloon as your team wins.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="flex border-b border-slate-200 overflow-x-auto">
+            {Object.keys(scenarios).map((key) => (
+              <button
+                key={key}
+                onClick={() => setActiveScenario(key)}
+                className={`flex-1 py-6 px-4 font-bold text-sm transition-all outline-none whitespace-nowrap ${
+                  activeScenario === key 
+                  ? 'text-[#2a63e4] border-b-4 border-[#2a63e4] bg-blue-50/50' 
+                  : 'text-slate-400 hover:text-slate-600'
+                }`}
+              >
+                {scenarios[key].label}
+              </button>
+            ))}
+          </div>
+
+          <div className="p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="inline-block p-4 rounded-2xl bg-blue-50 text-[#2a63e4]">
+                  <TrendingDown className="w-10 h-10" />
+                </div>
+                <h3 className="text-3xl font-bold">Why Maverick Wins on Value</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  "If you have free-flowing cash flow and want to over-customize with multiple vendors, that's your choice. 
+                  But if you want one tool that does more for less, Maverick is the smart option."
+                </p>
+                <div className="flex items-center space-x-2 text-sm font-bold text-slate-500">
+                  <Layers className="w-4 h-4" />
+                  <span>REPLACES 4+ COMPETITOR SUBSCRIPTIONS</span>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                <div className="space-y-6">
+                  <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <span className="text-slate-500 font-medium">Competitor "Usage Tax" Model</span>
+                    <span className="text-xl font-bold text-slate-400 line-through">{scenarios[activeScenario].competitor}</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <span className="text-[#1c1763] font-bold">Maverick Flat Package</span>
+                    <span className="text-3xl font-extrabold text-[#2a63e4]">{scenarios[activeScenario].maverick}</span>
+                  </div>
+                  <div className="pt-2">
+                    <div className="flex items-center justify-between p-4 bg-[#2a63e4] rounded-xl text-white">
+                      <span className="font-bold">Estimated Savings</span>
+                      <span className="text-2xl font-black">{scenarios[activeScenario].savings} SAVED</span>
+                    </div>
+                    <p className="mt-4 text-xs text-slate-400 italic">
+                      {scenarios[activeScenario].note}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. THE 3 CORE PILLARS */}
+      <section className="bg-slate-100 py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Automated Visibility</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Once your rules are set, Maverick runs. Get instant insight into lead leakage 
+                and conversion gaps without chasing spreadsheets.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
+                <BarChart3 className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Coaching at Scale</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Don't just track data—improve it. Use integrated workflows to provide 
+                consistent, high-impact coaching that turns B-players into A-players.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#2a63e4]">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold mb-3">True Accountability</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Remove the "guesswork" from management. Maverick bridges the gap between 
+                knowing what's wrong and ensuring it gets fixed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PARTNER STRATEGY CALLOUT */}
+      <section className="py-24 max-w-4xl mx-auto px-6 text-center">
+        <div className="bg-white p-12 rounded-[3rem] shadow-xl border-t-8 border-[#2a63e4]">
+          <h3 className="text-3xl font-extrabold mb-6">Innovative Partner Program</h3>
+          <p className="text-lg text-slate-600 mb-8">
+            We're partnering with the top innovators in the industry to build a new standard 
+            for real estate operations. Not just a payout system, but a growth engine.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-blue-500" />
+              <span className="font-bold text-sm">Joint Webinars</span>
+            </div>
+            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-blue-500" />
+              <span className="font-bold text-sm">Repurposed Content Clips</span>
+            </div>
+            <div className="px-6 py-3 bg-slate-50 rounded-full border border-slate-200 flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-blue-500" />
+              <span className="font-bold text-sm">Innovative Testimonials</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FOOTER / CTA */}
+      <footer className="bg-[#1c1763] text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-10">
+          <div className="mb-8 md:mb-0">
+            <img 
+              src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
+              alt="Maverick Logo" 
+              className="h-8 mb-4 opacity-80"
+            />
+            <p className="text-blue-300 text-sm">© 2024 Maverick Real Estate Solutions. All rights reserved.</p>
+          </div>
+          
+          <div className="text-center md:text-right">
+            <h5 className="text-lg font-bold mb-2">Ready to Automate?</h5>
+            <p className="text-blue-200 mb-6 text-sm">Schedule a deep-dive comparison and see your custom savings scenario.</p>
+            <button className="px-8 py-4 bg-[#2a63e4] hover:bg-[#354095] text-white font-bold rounded-2xl transition-all flex items-center mx-auto md:ml-auto">
+              Get Your Scenario Breakdown
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
