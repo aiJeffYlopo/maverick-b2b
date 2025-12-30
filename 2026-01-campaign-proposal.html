@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maverick | Q1 Strategic Campaign</title>
+    <title>Maverick | Q1 2026 Strategic Campaign</title>
     
     <!-- 1. Load Fonts and Tailwind CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Standard fade-in for better entrance */
         .fade-in {
             animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
@@ -67,7 +66,6 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Optimized Icon Component
         const Icon = ({ name, className = "w-6 h-6" }) => {
             const icons = {
                 zap: <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />,
@@ -137,16 +135,7 @@
             };
 
             return (
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className={className}
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
                     {icons[name] || null}
                 </svg>
             );
@@ -168,7 +157,7 @@
                     competitor: "$2,949+",
                     maverick: "$930",
                     savings: "68%",
-                    note: "70% of teams fall here. Shilo's AI alone costs $1,799 (93% more) and lacks reporting or distribution logic."
+                    note: "70% of teams fall here. Shilo's AI alone costs $1,799 (93% more than Maverick Pro) and lacks reporting or distribution logic."
                 },
                 enterprise: {
                     label: "Enterprise (200+ Agents)",
@@ -183,7 +172,7 @@
                 <div className="min-h-screen bg-slate-50 text-[#1c1763] pb-20 selection:bg-blue-100">
                     
                     {/* 1. HERO SECTION */}
-                    <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#1c1763] to-[#2a63e4] text-white pt-24 pb-64 px-6 overflow-hidden">
+                    <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#1c1763] to-[#2a63e4] text-white pt-[20px] pb-64 px-6 overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
                             <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-[#2a63e4] rounded-full blur-[160px] animate-pulse" />
                             <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[120px]" />
@@ -200,15 +189,15 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
-                            <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 leading-[1.05] text-white">
-                                Maverick is about to be <br/>
-                                <span className="inline-block bg-gradient-to-r from-blue-300 via-blue-100 to-white bg-clip-text text-transparent italic uppercase leading-tight pb-2">
-                                    automatic.
-                                </span>
-                            </h1>
+                            {/* Updated Headline: Campaign Image */}
+                            <img 
+                                src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Campaigns/2026/01/automatic-v1/MaverickRE%20is%20about%20to%20be%20Automatic-mock.png" 
+                                alt="Maverick is about to be Automatic" 
+                                className="mx-auto max-w-4xl w-full h-auto mb-8 drop-shadow-2xl"
+                            />
                             
                             <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
-                                The intelligent command center for teams of 5-50 agents. <br/>
+                                The intelligent command center for teams of 5+ agents. <br/>
                                 Stop paying <span className="text-white font-bold underline decoration-blue-400 decoration-2 underline-offset-4">93% more</span> for niche tools that leave gaps in your business.
                             </p>
                         </div>
@@ -240,9 +229,9 @@
                                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                             {[
                                                 { label: "AI Sales Coach", icon: "phone", metric: "100+ Scenarios", comp: "Shilo ($1.7k+)" },
-                                                { label: "Lead Sweeping", icon: "zap", metric: "Real-Time", comp: "Battr ($600+)" },
-                                                { label: "ProDispatch", icon: "zap", metric: "Automated", comp: "Manual / Slow" },
-                                                { label: "ROI Reports", icon: "chart", metric: "Financial", comp: "Spreadsheets" }
+                                                { label: "Lead Recirculation", icon: "zap", metric: "Real-Time", comp: "Battr ($600+)" },
+                                                { label: "ProDispatch", icon: "zap", metric: "ISA Helper", comp: "Manual Selection" },
+                                                { label: "Conversion Intel", icon: "chart", metric: "Measurement", comp: "Spreadsheets" }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                                                     <div className="text-[#2a63e4] group-hover:text-[#354095] transition-colors">
@@ -390,7 +379,7 @@
                             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
                                 <div className="max-w-xl">
                                     <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none">The Road to 2026.</h2>
-                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center to a fully automated operations engine. We're building the future of real estate operations.</p>
+                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is evolving from an intelligent command center into a fully automated operations engine. We're building the future of real estate operations.</p>
                                 </div>
                                 <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
                                     <Icon name="calendar" className="w-5 h-5 text-[#2a63e4]" />
@@ -401,22 +390,26 @@
                             <div className="grid md:grid-cols-3 gap-12 relative">
                                 <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 transform -translate-y-10" />
                                 
-                                {[
-                                    { date: "JANUARY 2026", title: "Automated Nudging", desc: "Automated notifications for Realtor/Residents → Pro → Rev Accelerator tiers.", badge: "LIVE IN BETA", color: "bg-slate-900" },
-                                    { date: "FEBRUARY 2026", title: "Auto-Reassignment", desc: "Target date for automated reassignment logic to ensure zero lead waste.", badge: "IN DEVELOPMENT", color: "bg-[#2a63e4]" },
-                                    { date: "Q1 2026", title: "Recruiting Module", desc: "Prototype in testing for enterprise teams and Zillow-level recruiting engines.", badge: "PROTOTYPING", color: "bg-slate-200 text-slate-600 font-black" }
-                                ].map((item, i) => (
-                                    <div key={i} className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
-                                        <div className={`absolute -top-4 left-10 px-4 py-2 ${item.color.includes('text') ? item.color : `${item.color} text-white`} rounded-full text-[10px] font-black tracking-widest uppercase`}>
-                                            {item.date}
-                                        </div>
-                                        <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">{item.title}</h4>
-                                        <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">{item.desc}</p>
-                                        <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">
-                                            {item.badge}
-                                        </div>
-                                    </div>
-                                ))}
+                                <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
+                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-900 text-white rounded-full text-[10px] font-black tracking-widest uppercase">JANUARY 2026</div>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">Lead Recirculation</h4>
+                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Automated notifications and lead reassignment for Realtor/Residents → Pro → Rev Accelerator tiers.</p>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">LIVE IN BETA</div>
+                                </div>
+
+                                <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
+                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-[#2a63e4] text-white rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">ISA Intelligence</h4>
+                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Enhanced ProDispatch logic to help ISAs automate lead selection and prioritize highest-converting targets.</p>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">IN DEVELOPMENT</div>
+                                </div>
+
+                                <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
+                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">Q1 2026</div>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 text-[#1c1763] leading-none">Conversion Measurement</h4>
+                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">New Lead Source Report features to provide deeper visibility into lead source conversion and agent performance.</p>
+                                    <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block">PROTOTYPING</div>
+                                </div>
                             </div>
                         </div>
                     </section>
