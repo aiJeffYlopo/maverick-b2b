@@ -89,6 +89,12 @@
                     </g>
                 ),
                 check: <polyline points="20 6 9 17 4 12" />,
+                x: (
+                    <g>
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </g>
+                ),
                 alert: (
                     <g>
                         <circle cx="12" cy="12" r="10" />
@@ -173,6 +179,20 @@
                 }
             };
 
+            const comparisonData = [
+                { feature: "AI Call Grading", maverick: "✓", shilo: "✓", battr: "✕" },
+                { feature: "AI Role Playing", maverick: "✓", shilo: "✓", battr: "✕" },
+                { feature: "Automated Lead Nudging", maverick: "✓ Jan 2026", shilo: "✕", battr: "✓" },
+                { feature: "Automated Lead Reassigning", maverick: "✓ Feb 2026", shilo: "✕", battr: "✓" },
+                { feature: "Pro-Dispatch (Smart Lead Distribution)", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Sales Manager Reporting (Key KPI's)", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "ISA Reporting", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Agent Specific Reporting & Pipeline Management", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Smart Appointment Outcome Texts", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Data Driven Recruiting", maverick: "✓ Q1 2026", shilo: "✕", battr: "✕" },
+                { feature: "Best Time To Call Report (based on your data)", maverick: "✓", shilo: "✕", battr: "✕" }
+            ];
+
             return (
                 <div className="min-h-screen bg-slate-50 text-[#1c1763] pb-20 selection:bg-blue-100">
                     
@@ -209,7 +229,7 @@
                         </div>
                     </header>
 
-                    {/* 2. THE PILLARS (Measurement, Accountability, Visibility) */}
+                    {/* 2. THE PILLARS */}
                     <section className="relative z-30 max-w-6xl mx-auto px-6 -mt-44 fade-in">
                         <div className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 p-1 md:p-1.5 border border-slate-100 overflow-hidden">
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
@@ -224,34 +244,10 @@
                                     <div className="lg:col-span-2 relative">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
-                                                { 
-                                                    label: "AI Sales Coach", 
-                                                    sub: "CONVERT MORE CALLS INTO APPOINTMENTS", 
-                                                    icon: "phone", 
-                                                    metric: "Role-Play 24/7", 
-                                                    comp: "Shilo ($1.7k+)" 
-                                                },
-                                                { 
-                                                    label: "Rules & Alerts", 
-                                                    sub: "NEVER MISS OPPORTUNITIES", 
-                                                    icon: "zap", 
-                                                    metric: "Real-Time Database Scan", 
-                                                    comp: "Battr ($600+)" 
-                                                },
-                                                { 
-                                                    label: "Pro-Dispatch", 
-                                                    sub: "INTELLIGENT LEAD ROUTING", 
-                                                    icon: "calendar", 
-                                                    metric: "Route Leads Based On Price Point, Source, or Location", 
-                                                    comp: "Sales Admin" 
-                                                },
-                                                { 
-                                                    label: "Conversion Intel", 
-                                                    sub: "MEASURE METRICS THAT MATTER", 
-                                                    icon: "chart", 
-                                                    metric: "Calls, Conversations, Appointments, Conversions", 
-                                                    comp: "Spreadsheets" 
-                                                }
+                                                { label: "AI Sales Coach", sub: "CONVERT MORE CALLS INTO APPOINTMENTS", icon: "phone", metric: "Role-Play 24/7", comp: "Shilo ($1.7k+)" },
+                                                { label: "Rules & Alerts", sub: "NEVER MISS OPPORTUNITIES", icon: "zap", metric: "Real-Time Database Scan", comp: "Battr ($600+)" },
+                                                { label: "Pro-Dispatch", sub: "INTELLIGENT LEAD ROUTING", icon: "calendar", metric: "Route Leads Based On Price Point, Source, or Location", comp: "Sales Admin" },
+                                                { label: "Conversion Intel", sub: "MEASURE METRICS THAT MATTER", icon: "chart", metric: "Calls, Conversations, Appointments, Conversions", comp: "Spreadsheets" }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                                                     <div className="text-[#2a63e4] group-hover:text-[#354095] transition-colors">
@@ -282,24 +278,9 @@
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { 
-                                    val: "2X", 
-                                    label: "More Appointments Set", 
-                                    sub: "Agents typically double their appointment set rate after just 30 AI coaching calls.", 
-                                    icon: "trophy" 
-                                },
-                                { 
-                                    val: "+36%", 
-                                    label: "Increased Conversion Rate", 
-                                    sub: "Lead-to-close conversion rate jumps 36% on average after implementing AI Sales Coach + core Maverick features.", 
-                                    icon: "chart" 
-                                },
-                                { 
-                                    val: "24/7", 
-                                    label: "ROLE-PLAY ALL DAY", 
-                                    sub: "Agents use AI Sales Coach whenever they have time (we've seen calls at 1 am).", 
-                                    icon: "phone" 
-                                }
+                                { val: "2X", label: "More Appointments Set", sub: "Agents typically double their appointment set rate after just 30 AI coaching calls.", icon: "trophy" },
+                                { val: "+36%", label: "Increased Conversion Rate", sub: "Lead-to-close conversion rate jumps 36% on average after implementing AI Sales Coach + core Maverick features.", icon: "chart" },
+                                { val: "24/7", label: "ROLE-PLAY ALL DAY", sub: "Agents use AI Sales Coach whenever they have time (we've seen calls at 1 am).", icon: "phone" }
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 text-center relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -347,23 +328,9 @@
                                         </div>
                                         <div>
                                             <h3 className="text-4xl font-black mb-6 tracking-tight leading-none uppercase">More Sales.<br/>Lower Cost.</h3>
-                                            <p className="text-slate-600 leading-relaxed text-xl italic font-medium">
+                                            <p className="text-slate-600 leading-relaxed text-xl italic font-medium max-w-lg">
                                                 "At the same number of agents and using the tool equally, you're going to spend way more licensing all these other tools than just licensing Maverick."
                                             </p>
-                                        </div>
-                                        <div className="space-y-4">
-                                            {[
-                                                { t: "Database Watch 24/7", s: "Never miss high-priority buyer or seller actions" },
-                                                { t: "Real-Time CRM Tracking", s: "No more manual exporting—get precision data now" }
-                                            ].map((item, i) => (
-                                                <div key={i} className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                                    <Icon name="check" className="w-6 h-6 text-[#2a63e4]" />
-                                                    <div>
-                                                        <span className="block font-black text-sm uppercase tracking-wider">{item.t}</span>
-                                                        <span className="text-[11px] text-slate-500 font-bold uppercase tracking-tighter italic">{item.s}</span>
-                                                    </div>
-                                                </div>
-                                            ))}
                                         </div>
                                     </div>
 
@@ -402,6 +369,51 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    {/* NEW: COMPETITOR FEATURE COMPARISON TABLE */}
+                    <section className="py-24 max-w-6xl mx-auto px-6 fade-in text-[#1c1763]">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase">Competitor Feature Comparison Table</h2>
+                            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">See how MaverickRE stacks up against the competition</p>
+                        </div>
+                        <div className="bg-white rounded-[3rem] shadow-xl border border-slate-100 overflow-hidden">
+                            <table className="w-full text-left border-collapse">
+                                <thead>
+                                    <tr className="bg-[#1c1763] text-white">
+                                        <th className="py-6 px-8 text-xs font-black uppercase tracking-widest">Feature</th>
+                                        <th className="py-6 px-8 text-xs font-black uppercase tracking-widest text-center bg-[#2a63e4]">MaverickRE</th>
+                                        <th className="py-6 px-8 text-xs font-black uppercase tracking-widest text-center">Shilo</th>
+                                        <th className="py-6 px-8 text-xs font-black uppercase tracking-widest text-center">Battr</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-100">
+                                    {comparisonData.map((row, idx) => (
+                                        <tr key={idx} className="hover:bg-slate-50 transition-colors group">
+                                            <td className="py-5 px-8 text-sm font-bold text-[#1c1763]">{row.feature}</td>
+                                            <td className="py-5 px-8 text-center bg-blue-50/50">
+                                                <div className="flex flex-col items-center justify-center">
+                                                    {row.maverick.includes('✓') ? (
+                                                        <Icon name="check" className="w-6 h-6 text-green-500 font-bold" />
+                                                    ) : (
+                                                        <Icon name="x" className="w-5 h-5 text-slate-300" />
+                                                    )}
+                                                    {row.maverick.length > 1 && (
+                                                        <span className="text-[10px] font-black text-maverick-blue uppercase tracking-tighter mt-1">{row.maverick.replace('✓ ', '')}</span>
+                                                    )}
+                                                </div>
+                                            </td>
+                                            <td className="py-5 px-8 text-center">
+                                                {row.shilo === "✓" ? <Icon name="check" className="w-6 h-6 text-[#1c1763] mx-auto" /> : <Icon name="x" className="w-5 h-5 text-slate-300 mx-auto" />}
+                                            </td>
+                                            <td className="py-5 px-8 text-center">
+                                                {row.battr === "✓" ? <Icon name="check" className="w-6 h-6 text-[#1c1763] mx-auto" /> : <Icon name="x" className="w-5 h-5 text-slate-300 mx-auto" />}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                     </section>
 
