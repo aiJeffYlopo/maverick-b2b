@@ -133,7 +133,7 @@
                     <g>
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                         <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="8" y1="2" x2="8" ry="2" />
                         <line x1="3" y1="10" x2="21" y2="10" />
                     </g>
                 ),
@@ -153,29 +153,36 @@
         };
 
         const App = () => {
-            const [activeScenario, setActiveScenario] = useState('mid');
+            const [activeScenario, setActiveScenario] = useState('midsize');
 
             const scenarios = {
                 small: {
                     label: "Small Team (< 10 Agents)",
-                    competitor: "$1,350+",
+                    competitor: "$679",
                     maverick: "$375",
-                    savings: "72%",
-                    note: "Teams spend way more licensing separate tools than just licensing Maverick."
+                    savings: "45%",
+                    note: "Replaces Shilo ($199) and Battr ($480). Saves $3,648 annually."
                 },
-                mid: {
-                    label: "Mid-Size (10-49 Agents)",
-                    competitor: "$2,949+",
-                    maverick: "$930",
-                    savings: "68%",
-                    note: "Competitor billing increases the more your agents use it. Maverick is one flat price per team size."
+                midsize: {
+                    label: "Midsize Team (10-19 Agents)",
+                    competitor: "$1,549",
+                    maverick: "$575",
+                    savings: "63%",
+                    note: "Highest savings segment. Replaces Shilo ($899) and Battr ($650). Saves $11,688 annually."
+                },
+                large: {
+                    label: "Large Team (20-49 Agents)",
+                    competitor: "$1,649",
+                    maverick: "$1,175",
+                    savings: "29%",
+                    note: "Replaces Shilo ($899) and Battr ($750). Saves $5,688 annually while removing integration headaches."
                 },
                 enterprise: {
-                    label: "Enterprise (200+ Agents)",
-                    competitor: "$7,300+",
+                    label: "Enterprise",
+                    competitor: "$3,249",
                     maverick: "$2,200",
-                    savings: "70%",
-                    note: "Successful teams get penalized with usage taxes. We offer flat pricing for any size."
+                    savings: "32%",
+                    note: "Maverick Pro tier includes ISA Reporting and ProDispatch—features competitors don't offer at any price."
                 }
             };
 
@@ -189,6 +196,7 @@
                 { feature: "ISA Reporting", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Agent Specific Reporting & Pipeline Management", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Smart Appointment Outcome Texts", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Data Driven Recruiting", maverick: "✓ Q1 2026", shilo: "✕", battr: "✕" },
                 { feature: "Best Time To Call Report (based on your data)", maverick: "✓", shilo: "✕", battr: "✕" }
             ];
 
@@ -213,7 +221,6 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
-                            {/* Main Headline Redesign: Expanded width to fit first line */}
                             <div className="mb-12">
                                 <h1 className="text-5xl md:text-[85px] lg:text-[110px] font-black tracking-tighter leading-[0.95] mb-4 uppercase hero-gradient-text italic">
                                     <span className="block whitespace-nowrap">MEASURE WHAT MATTERS.</span>
@@ -236,14 +243,13 @@
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
                                 <div className="grid lg:grid-cols-3 gap-12 items-center">
                                     <div className="lg:border-r border-slate-100 lg:pr-12">
-                                        <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">MEASURE AGENT ACTIVITY.</h3>
+                                        <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">MEASURE WHAT MATTERS.</h3>
                                         <p className="text-slate-500 font-medium leading-relaxed">
                                             Maverick surfaces exactly where opportunities are slipping through the cracks. By identifying missed leads in real-time, it gives you the visibility needed to support your agents and restore every opportunity to close more deals.
                                         </p>
                                     </div>
                                     
                                     <div className="lg:col-span-2 relative">
-                                        {/* 2x2 Grid Format for easier reading */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
                                                 { 
@@ -272,7 +278,7 @@
                                                 },
                                                 { 
                                                     label: "Conversion Intelligence", 
-                                                    sub: "MEASURE ROI", 
+                                                    sub: "MEASURE WHAT MATTERS", 
                                                     icon: "chart", 
                                                     metric: "Calls, Conversations, Appointments, Conversions", 
                                                     comp: "ROI Reporting",
@@ -324,12 +330,12 @@
                         </div>
                     </section>
 
-                    {/* 4. PRICING EXPLORER */}
+                    {/* 4. PRICING EXPLORER (4 TIER REDESIGN) */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none text-[#1c1763]">Don't fall for the bait and switch.</h2>
-                            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-                                With competitors, the more you use the tools, the more you pay. Maverick is priced based on team size so you aren't charged more for AI calls graded or database scans completed. Predictable pricing for predictable growth.
+                            <p className="text-lg text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
+                                MaverickRE delivers the industry's most complete accountability stack at 40-50% lower cost than stitching together niche tools. While competitors use metered billing and "success taxes" that penalize your growth, Maverick provides a complete platform at a predictable flat price. A typical Pro client would pay $1,799/mo for Shilo's AI alone—93% more than Maverick—without getting CRM reporting, ISA dashboards, or the "Carrot Culture" tools agents actually want.
                             </p>
                         </div>
 
@@ -339,7 +345,7 @@
                                     <button
                                         key={key}
                                         onClick={() => setActiveScenario(key)}
-                                        className={`flex-1 py-8 px-8 font-black text-[11px] uppercase tracking-[0.2em] transition-all outline-none whitespace-nowrap ${
+                                        className={`flex-1 py-8 px-6 font-black text-[10px] md:text-[11px] uppercase tracking-[0.2em] transition-all outline-none whitespace-nowrap ${
                                             activeScenario === key 
                                             ? 'text-[#2a63e4] border-b-4 border-[#2a63e4] bg-white shadow-sm' 
                                             : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
@@ -523,7 +529,7 @@
                             <div className="text-center md:text-right max-w-md">
                                 <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic leading-none">Ready to scale?</h5>
                                 <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
-                                    Stop miss-managing your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
+                                    Stop mismanaging your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
                                 </p>
                                 <button className="group px-12 py-6 bg-[#1c1763] hover:bg-[#2a63e4] text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-[#1c1763]/30">
                                     Run My Pricing Scenario
