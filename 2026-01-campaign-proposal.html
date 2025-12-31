@@ -142,6 +142,13 @@
                         <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
                         <polyline points="17 18 23 18 23 12" />
                     </g>
+                ),
+                share: (
+                    <g>
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                    </g>
                 )
             };
 
@@ -175,7 +182,7 @@
                     competitor: "$7,300+",
                     maverick: "$2,200",
                     savings: "70%",
-                    note: "Competitors charge exorbitant fees at scale. We offer flat pricing for any team size."
+                    note: "Successful teams get penalized with usage taxes. We offer flat pricing for any size."
                 }
             };
 
@@ -184,12 +191,11 @@
                 { feature: "AI Role Playing", maverick: "✓", shilo: "✓", battr: "✕" },
                 { feature: "Automated Lead Nudging", maverick: "✓ Jan 2026", shilo: "✕", battr: "✓" },
                 { feature: "Automated Lead Reassigning", maverick: "✓ Feb 2026", shilo: "✕", battr: "✓" },
-                { feature: "Pro-Dispatch (Smart Lead Distribution)", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "ProDispatch (Appointment Routing)", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Sales Manager Reporting (Key KPI's)", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "ISA Reporting", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Agent Specific Reporting & Pipeline Management", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Smart Appointment Outcome Texts", maverick: "✓", shilo: "✕", battr: "✕" },
-                { feature: "Data Driven Recruiting", maverick: "✓ Q1 2026", shilo: "✕", battr: "✕" },
                 { feature: "Best Time To Call Report (based on your data)", maverick: "✓", shilo: "✕", battr: "✕" }
             ];
 
@@ -224,7 +230,7 @@
                             </div>
                             
                             <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
-                                The sales acceleration tool for real estate teams of any size. Maverick watches your database 24/7 and alerts your team the <span className="text-white font-bold">moment</span> a high-value opportunity presents itself. Soon, all of the game-changing features our clients love will happen automatically.
+                                Fully automated sales acceleration for real estate teams of any size. Maverick watches your database 24/7 and alerts your team the <span className="text-white font-bold">moment</span> a high-value opportunity presents itself. Soon, nudging agents to follow up with the right lead at the right time will happen automatically.
                             </p>
                         </div>
                     </header>
@@ -244,10 +250,34 @@
                                     <div className="lg:col-span-2 relative">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
-                                                { label: "AI Sales Coach", sub: "CONVERT MORE CALLS INTO APPOINTMENTS", icon: "phone", metric: "Role-Play 24/7", comp: "Shilo ($1.7k+)" },
-                                                { label: "Rules & Alerts", sub: "NEVER MISS OPPORTUNITIES", icon: "zap", metric: "Real-Time Database Scan", comp: "Battr ($600+)" },
-                                                { label: "Pro-Dispatch", sub: "INTELLIGENT LEAD ROUTING", icon: "calendar", metric: "Route Leads Based On Price Point, Source, or Location", comp: "Sales Admin" },
-                                                { label: "Conversion Inteligence", sub: "MEASURE METRICS THAT MATTER", icon: "chart", metric: "Calls, Conversations, Appointments, Conversions", comp: "Spreadsheets" }
+                                                { 
+                                                    label: "AI Sales Coach", 
+                                                    sub: "CONVERT MORE CALLS INTO APPOINTMENTS", 
+                                                    icon: "phone", 
+                                                    metric: "Role-Play 24/7", 
+                                                    comp: "Shilo ($1.7k+)" 
+                                                },
+                                                { 
+                                                    label: "Rules & Alerts", 
+                                                    sub: "NEVER MISS OPPORTUNITIES", 
+                                                    icon: "zap", 
+                                                    metric: "Real-Time Database Scan", 
+                                                    comp: "Battr ($600+)" 
+                                                },
+                                                { 
+                                                    label: "ProDispatch", 
+                                                    sub: "INTELLIGENT APPOINTMENT ROUTING", 
+                                                    icon: "calendar", 
+                                                    metric: "Route Appts Based On Price Point, Source, or Location", 
+                                                    comp: "Requires ISA/Admin" 
+                                                },
+                                                { 
+                                                    label: "Conversion Intelligence", 
+                                                    sub: "MEASURE METRICS THAT MATTER", 
+                                                    icon: "chart", 
+                                                    metric: "Calls, Conversations, Appointments, Conversions", 
+                                                    comp: "Spreadsheets" 
+                                                }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                                                     <div className="text-[#2a63e4] group-hover:text-[#354095] transition-colors">
@@ -257,7 +287,7 @@
                                                     <span className="text-[10px] text-[#2a63e4] font-black uppercase tracking-widest mb-3 leading-tight px-4">{item.sub}</span>
                                                     <span className="text-xs text-slate-500 font-bold mb-4 uppercase">{item.metric}</span>
                                                     <div className="mt-auto pt-4 border-t border-slate-200 w-full">
-                                                        <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase leading-none">Replaces {item.comp}</span>
+                                                        <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-bold tracking-tighter uppercase leading-none">Efficiency Tool for {item.comp}</span>
                                                     </div>
                                                 </div>
                                             ))}
@@ -423,7 +453,7 @@
                             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
                                 <div className="max-w-xl">
                                     <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase leading-none">The Road to 2026.</h2>
-                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is the game-changer you've been looking for. Stop guessing–get instant insights based on real-time CRM data, watch your agents set twice as many appointments with AI Sales Coach, route leads intelligently with Pro-Dispatch, reassign leads when they aren't being worked, and watch your conversions skyrocket.</p>
+                                    <p className="text-slate-600 font-bold leading-relaxed">Maverick is the game-changer you've been looking for. Stop guessing–get instant insights based on real-time CRM data, watch your agents set twice as many appointments with AI Sales Coach, route appointments intelligently with ProDispatch, reassign leads when they aren't being worked, and watch your conversions skyrocket.</p>
                                 </div>
                                 <div className="flex items-center space-x-3 p-4 bg-white rounded-2xl shadow-sm border border-slate-200 inline-flex">
                                     <Icon name="calendar" className="w-5 h-5 text-[#2a63e4]" />
@@ -436,23 +466,23 @@
                                 
                                 <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-900 text-white rounded-full text-[10px] font-black tracking-widest uppercase">JANUARY 2026</div>
+                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">CRM Integrations</h4>
+                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Completing new integrations with more of the most popular real estate CRMs.</p>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">NEW</div>
+                                </div>
+
+                                <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
+                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-[#2a63e4] text-white rounded-full text-[10px] font-black tracking-widest uppercase">JANUARY 2026</div>
                                     <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Rules & Alerts</h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Automated notifications and lead reassignment for Pro and Accelerator tiers.</p>
+                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Automated notifications for Pro and Accelerator tiers to ensure follow-up speed.</p>
                                     <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block">LIVE IN BETA</div>
                                 </div>
 
                                 <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
-                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-[#2a63e4] text-white rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
+                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
                                     <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Auto-Reassignment</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
-                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
-                                </div>
-
-                                <div className="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-100 relative group hover:border-[#2a63e4] transition-colors">
-                                    <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">Q1 2026</div>
-                                    <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Recruiting Module</h4>
-                                    <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Prototype in testing for enterprise teams and recruitment-focused growth engines.</p>
-                                    <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase">PROTOTYPING</div>
+                                    <div className="p-3 bg-slate-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
                                 </div>
                             </div>
                         </div>
