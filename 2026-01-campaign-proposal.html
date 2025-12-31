@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maverick | More Sales, More Quickly</title>
+    <title>Maverick | Measure What Matters. Sell More Homes.</title>
     
     <!-- 1. Load Fonts and Tailwind CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,13 +142,6 @@
                         <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
                         <polyline points="17 18 23 18 23 12" />
                     </g>
-                ),
-                share: (
-                    <g>
-                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                        <polyline points="16 6 12 2 8 6" />
-                        <line x1="12" y1="2" x2="12" y2="15" />
-                    </g>
                 )
             };
 
@@ -203,13 +196,13 @@
                 <div className="min-h-screen bg-slate-50 text-[#1c1763] pb-20 selection:bg-blue-100">
                     
                     {/* 1. HERO SECTION */}
-                    <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#1c1763] to-[#2a63e4] text-white pt-[20px] pb-64 px-6 overflow-hidden">
+                    <header className="relative bg-[#1c1763] bg-gradient-to-br from-[#1c1763] via-[#1c1763] to-[#2a63e4] text-white pt-[20px] pb-64 px-4 md:px-12 overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
                             <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-[#2a63e4] rounded-full blur-[160px] animate-pulse" />
                             <div className="absolute bottom-20 right-20 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[120px]" />
                         </div>
                         
-                        <div className="max-w-6xl mx-auto relative z-10 text-center fade-in">
+                        <div className="max-w-7xl mx-auto relative z-10 text-center fade-in">
                             <img 
                                 src="https://pub-0049dbd86f824152a103b7937d2fad4a.r2.dev/Brand/Logo/MaverickRE%20Logo%20-%20White%20and%20Blue.png" 
                                 alt="Maverick Logo" 
@@ -220,16 +213,18 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
+                            {/* Main Headline Redesign: Expanded width to fit first line */}
                             <div className="mb-12">
-                                <h1 className="text-6xl md:text-[110px] font-black tracking-tighter leading-[0.9] mb-4 uppercase hero-gradient-text italic">
-                                    MORE SALES.<br/>MORE QUICKLY.
+                                <h1 className="text-5xl md:text-[85px] lg:text-[110px] font-black tracking-tighter leading-[0.95] mb-4 uppercase hero-gradient-text italic">
+                                    <span className="block whitespace-nowrap">MEASURE WHAT MATTERS.</span>
+                                    <span className="block">SELL MORE HOMES.</span>
                                 </h1>
                                 <p className="text-2xl md:text-4xl font-extrabold text-blue-300/90 tracking-tight uppercase">
                                     Soon, Fully Automated.
                                 </p>
                             </div>
                             
-                            <p className="text-xl md:text-2xl text-blue-100/70 max-w-3xl mx-auto font-light leading-relaxed">
+                            <p className="text-xl md:text-2xl text-blue-100/70 max-w-4xl mx-auto font-light leading-relaxed">
                                 Fully automated sales acceleration for real estate teams of any size. Maverick watches your database 24/7 and alerts your team the <span className="text-white font-bold">moment</span> a high-value opportunity presents itself. Soon, nudging agents to follow up with the right lead at the right time will happen <span className="text-white italic">automatically</span>.
                             </p>
                         </div>
@@ -248,7 +243,7 @@
                                     </div>
                                     
                                     <div className="lg:col-span-2 relative">
-                                        {/* 2x2 Grid Format for easier reading */}
+                                        {/* 2x2 Grid Format */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
                                                 { 
@@ -308,7 +303,7 @@
                         <div className="text-center mb-16">
                             <h2 className="text-3xl font-black mb-4 uppercase italic">AICE: The AI Coach That Does it Better Than a Human</h2>
                             <p className="text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
-                                Agents don't need to miss opportunities by "screwing up" with real life leads anymore. Let agents role-play with hundreds of challenging buyer and seller scenarios 24/7. AI Call Grading immediately sends them a report so they can make changes before they make their next dial.
+                                Agents don't need to miss opportunities by "screwing up" with real life leads anymore. Let agents role-play with hundreds of challenging buyer and seller scenarios 24/7. AI Call Grading immediately sends them a report so they can make changes before they make their next dial!
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -487,7 +482,7 @@
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
                                     <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Auto-Reassignment</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
-                                    <div className="p-3 bg-blue-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
                                 </div>
                             </div>
                         </div>
