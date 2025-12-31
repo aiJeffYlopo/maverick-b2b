@@ -194,7 +194,7 @@
                 { feature: "ProDispatch (Appointment Routing)", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Sales Manager Reporting (Key KPI's)", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "ISA Reporting", maverick: "✓", shilo: "✕", battr: "✕" },
-                { feature: "Agent Specific Reporting & Pipeline Management", maverick: "✓", shilo: "✕", battr: "✕" },
+                { feature: "Agent Dashboard w/ Performance Insights", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Smart Appointment Outcome Texts", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Best Time To Call Report (based on your data)", maverick: "✓", shilo: "✕", battr: "✕" }
             ];
@@ -220,6 +220,7 @@
                                 <span>2025 FINALIST - INMAN INNOVATORS - MOST INNOVATIVE USE OF AI</span>
                             </div>
                             
+                            {/* Main Headline Redesign: Expanded width to fit first line */}
                             <div className="mb-12">
                                 <h1 className="text-5xl md:text-[85px] lg:text-[110px] font-black tracking-tighter leading-[0.95] mb-4 uppercase hero-gradient-text italic">
                                     <span className="block whitespace-nowrap">MEASURE WHAT MATTERS.</span>
@@ -242,7 +243,7 @@
                             <div className="bg-white rounded-[2.8rem] p-8 md:p-12">
                                 <div className="grid lg:grid-cols-3 gap-12 items-center">
                                     <div className="lg:border-r border-slate-100 lg:pr-12">
-                                        <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">MEASURE WHAT MATTERS.</h3>
+                                        <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 uppercase leading-none text-[#1c1763]">MEASURE AGENT ACTIVITY.</h3>
                                         <p className="text-slate-500 font-medium leading-relaxed">
                                             Maverick surfaces exactly where opportunities are slipping through the cracks. By identifying missed leads in real-time, it gives you the visibility needed to support your agents and restore every opportunity to close more deals.
                                         </p>
@@ -274,15 +275,15 @@
                                                     icon: "calendar", 
                                                     metric: "Route Appts Based On Price Point, Source, or Location", 
                                                     comp: "ISA/Admin",
-                                                    type: "Augments"
+                                                    type: "Helps"
                                                 },
                                                 { 
                                                     label: "Conversion Intelligence", 
-                                                    sub: "MEASURE WHAT MATTERS", 
+                                                    sub: "MEASURE ROI", 
                                                     icon: "chart", 
                                                     metric: "Calls, Conversations, Appointments, Conversions", 
                                                     comp: "ROI Reporting",
-                                                    type: "Augments"
+                                                    type: "Helps"
                                                 }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
@@ -330,12 +331,12 @@
                         </div>
                     </section>
 
-                    {/* 4. PRICING EXPLORER (REWRITTEN 4-TIER DESIGN) */}
+                    {/* 4. PRICING EXPLORER */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none text-[#1c1763]">Don't fall for the bait and switch.</h2>
                             <p className="text-lg text-slate-500 max-w-4xl mx-auto font-medium leading-relaxed">
-                                MaverickRE delivers a complete accountability stack at 40-50% lower cost than competitors. For teams of any size, piecing together Shilo for AI grading and Battr for nudging costs up to 93% more—and you still won't have CRM reporting or sales funnel analytics to see the actual business impact.
+                                MaverickRE delivers the industry's most complete accountability stack at 40-50% lower cost than stitching together niche tools. While competitors use metered billing and "success taxes" that penalize your growth, Maverick provides a complete platform at a predictable flat price. A typical Pro client would pay $1,799/mo for Shilo's AI alone—93% more than Maverick—without getting CRM reporting, ISA dashboards, or the "Carrot Culture" tools agents actually want.
                             </p>
                         </div>
 
@@ -365,7 +366,7 @@
                                         <div>
                                             <h3 className="text-4xl font-black mb-6 tracking-tight leading-none uppercase">More Sales.<br/>Lower Cost.</h3>
                                             <p className="text-slate-600 leading-relaxed text-xl italic font-medium max-w-lg">
-                                                "At the same number of agents and using the tool equally, you're going to spend way more licensing all these other tools than just licensing Maverick."
+                                                "MaverickRE delivers a complete accountability stack at 40-50% lower cost than competitors. For teams of any size, piecing together Shilo for AI grading and Battr for nudging costs up to 93% more—and you still won't have CRM reporting or sales funnel analytics to see the actual business impact."
                                             </p>
                                         </div>
                                     </div>
@@ -488,7 +489,7 @@
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
                                     <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Auto-Reassignment</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
-                                    <div className="p-3 bg-blue-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
                                 </div>
                             </div>
                         </div>
@@ -529,7 +530,7 @@
                             <div className="text-center md:text-right max-w-md">
                                 <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic leading-none">Ready to scale?</h5>
                                 <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
-                                    Stop miss-managing your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
+                                    Stop mismanaging your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
                                 </p>
                                 <button className="group px-12 py-6 bg-[#1c1763] hover:bg-[#2a63e4] text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-[#1c1763]/30">
                                     Run My Pricing Scenario
