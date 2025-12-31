@@ -161,28 +161,28 @@
                     competitor: "$679",
                     maverick: "$375",
                     savings: "45%",
-                    note: "Replaces Shilo ($199) and Battr ($480). Saves $3,648 annually."
+                    note: "Replaces Shilo ($199) and Battr ($480). Saves $3,648 annually while adding complete funnel reporting."
                 },
                 midsize: {
                     label: "Midsize Team (10-19 Agents)",
                     competitor: "$1,549",
                     maverick: "$575",
                     savings: "63%",
-                    note: "Highest savings segment. Replaces Shilo ($899) and Battr ($650). Saves $11,688 annually."
+                    note: "Our highest savings tier. Replaces Shilo ($899) and Battr ($650). Saves $11,688 back into your pocket annually."
                 },
                 large: {
                     label: "Large Team (20-49 Agents)",
                     competitor: "$1,649",
                     maverick: "$1,175",
                     savings: "29%",
-                    note: "Replaces Shilo ($899) and Battr ($750). Saves $5,688 annually while removing integration headaches."
+                    note: "Cheaper than buying Shilo + Battr + reporting stack separately. Removes all fragmented tool headaches."
                 },
                 enterprise: {
                     label: "Enterprise",
                     competitor: "$3,249",
                     maverick: "$2,200",
                     savings: "32%",
-                    note: "Maverick Pro tier includes ISA Reporting and ProDispatch—features competitors don't offer at any price."
+                    note: "Moves into Pro tier. Includes ISA Reporting and ProDispatch—features competitors don't offer at any price."
                 }
             };
 
@@ -196,7 +196,6 @@
                 { feature: "ISA Reporting", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Agent Specific Reporting & Pipeline Management", maverick: "✓", shilo: "✕", battr: "✕" },
                 { feature: "Smart Appointment Outcome Texts", maverick: "✓", shilo: "✕", battr: "✕" },
-                { feature: "Data Driven Recruiting", maverick: "✓ Q1 2026", shilo: "✕", battr: "✕" },
                 { feature: "Best Time To Call Report (based on your data)", maverick: "✓", shilo: "✕", battr: "✕" }
             ];
 
@@ -250,6 +249,7 @@
                                     </div>
                                     
                                     <div className="lg:col-span-2 relative">
+                                        {/* 2x2 Grid Format */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {[
                                                 { 
@@ -274,7 +274,7 @@
                                                     icon: "calendar", 
                                                     metric: "Route Appts Based On Price Point, Source, or Location", 
                                                     comp: "ISA/Admin",
-                                                    type: "Helps"
+                                                    type: "Augments"
                                                 },
                                                 { 
                                                     label: "Conversion Intelligence", 
@@ -282,7 +282,7 @@
                                                     icon: "chart", 
                                                     metric: "Calls, Conversations, Appointments, Conversions", 
                                                     comp: "ROI Reporting",
-                                                    type: "Helps"
+                                                    type: "Augments"
                                                 }
                                             ].map((item, i) => (
                                                 <div key={i} className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
@@ -330,12 +330,12 @@
                         </div>
                     </section>
 
-                    {/* 4. PRICING EXPLORER (4 TIER REDESIGN) */}
+                    {/* 4. PRICING EXPLORER (REWRITTEN 4-TIER DESIGN) */}
                     <section className="pb-24 max-w-6xl mx-auto px-6 fade-in">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight italic uppercase leading-none text-[#1c1763]">Don't fall for the bait and switch.</h2>
-                            <p className="text-lg text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
-                                MaverickRE delivers the industry's most complete accountability stack at 40-50% lower cost than stitching together niche tools. While competitors use metered billing and "success taxes" that penalize your growth, Maverick provides a complete platform at a predictable flat price. A typical Pro client would pay $1,799/mo for Shilo's AI alone—93% more than Maverick—without getting CRM reporting, ISA dashboards, or the "Carrot Culture" tools agents actually want.
+                            <p className="text-lg text-slate-500 max-w-4xl mx-auto font-medium leading-relaxed">
+                                MaverickRE delivers a complete accountability stack at 40-50% lower cost than competitors. For teams of any size, piecing together Shilo for AI grading and Battr for nudging costs up to 93% more—and you still won't have CRM reporting or sales funnel analytics to see the actual business impact.
                             </p>
                         </div>
 
@@ -488,7 +488,7 @@
                                     <div className="absolute -top-4 left-10 px-4 py-2 bg-slate-200 text-slate-600 font-black rounded-full text-[10px] font-black tracking-widest uppercase">FEBRUARY 2026</div>
                                     <h4 className="text-2xl font-black mb-4 uppercase mt-2 leading-none">Auto-Reassignment</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed font-semibold mb-6">Target date for automated reassignment logic to ensure zero lead waste.</p>
-                                    <div className="p-3 bg-blue-50 rounded-xl text-[#2a63e4] text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
+                                    <div className="p-3 bg-blue-50 rounded-xl text-slate-400 text-[10px] font-black uppercase tracking-widest inline-block uppercase italic">IN DEVELOPMENT</div>
                                 </div>
                             </div>
                         </div>
@@ -529,7 +529,7 @@
                             <div className="text-center md:text-right max-w-md">
                                 <h5 className="text-4xl font-black mb-4 tracking-tight uppercase italic leading-none">Ready to scale?</h5>
                                 <p className="text-slate-500 mb-10 text-sm font-bold leading-relaxed">
-                                    Stop mismanaging your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
+                                    Stop miss-managing your leads. Maverick watching your database 24/7 is like having an assistant that never sleeps.
                                 </p>
                                 <button className="group px-12 py-6 bg-[#1c1763] hover:bg-[#2a63e4] text-white font-black rounded-[2.5rem] transition-all duration-500 flex items-center mx-auto md:ml-auto shadow-2xl shadow-[#1c1763]/30">
                                     Run My Pricing Scenario
